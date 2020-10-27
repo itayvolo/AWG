@@ -1,0 +1,2 @@
+# AWG
+Automatic War Game
