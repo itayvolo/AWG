@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"/>
   <!-- MDB -->
   <link rel="stylesheet" href="css/mdb.min.css"/>
-  <script defer src="js/all.js"></script>
+  <!--<script defer src="js/all.js"></script>-->
   <script src="js/bootstrap.js"></script>
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -115,8 +115,8 @@ function right_close() {
 }
 
 //DropDown
-var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
+//var dropdown = document.getElementsByClassName("dropdown-btn");
+//var i;
 
 //for (i = 0; i < dropdown.length; i++) {
 //  dropdown[i].addEventListener("click", function() {
@@ -133,9 +133,9 @@ var i;
 
 $(document).ready(function(){
   $(".dropdown-btn").click(function(){
-    $(".fa-caret-down").toggle("rtoate180");
-    $(".dropdown-container").stop().slideToggle(500);
     this.classList.toggle("active");
+    $(".fa-caret-down").toggleClass("rtoate180");
+    $(".dropdown-container").stop().slideToggle(500);
   });
 });
 

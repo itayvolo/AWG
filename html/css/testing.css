@@ -1,129 +1,192 @@
-/*----------------------------*\
-  @Colors
-\*----------------------------*/
-
-@base-blue:        #3498db; // rgb(52, 152, 219)
-@base-teal:        #24cabc; // rgb(36,202,188);
-@base-green:       #2ecc71; // rgb(46, 204, 113) 
-@base-orange:      #f46801; // rgb(244, 104, 1)
-@base-warning:     #f39c12; // rgb(243, 156, 18)
-@base-danger:      #e74c3c; // rgb(231, 76, 60)
-
-@base-white:       #fff;
-
-@base-size:        1rem;
-
 body {
-  text-align: center;
-  background-color: whitesmoke;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul, ol {
-  list-style: none;
-}
-
-header {
-  background-color: #3f3f3f;
-  display: block;
-  padding: 0.50rem;
-  
-  nav a {
-      padding: 1rem 1.5rem;
-      color: @base-white;
-      text-align: left;
-      &:hover {
-        background-color: #2f2f2f;
-      }
-    }
-   .dropdown {
-     display: inline-block;
-     
-     .drop {
-       background-color: #2f2f2f;
-     }
-   } 
- }
-
-.left-float {
-  float: left;
-}
-
-.right-float {
-  float: right;
-}
-
-.wrap {
-  width: 23.5rem;
-  display: block;
-  margin: 10rem auto;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-  
-  .drop {
-    background-color: @base-blue;
-    color: @base-white;
-    padding: 1rem;
-    border-radius: 6px;
-    position: relative;
-    display: inline-block;
+    font-family: "Lato", sans-serif;
   }
   
-  > .dropdown-menu {
-    width: @base-size * 15;
-    list-style: none;
-    margin: 0;
-    margin-top: 8px;
-    padding: 0;
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav .topsidenav {
+    background-color: #607d8b;
+    width: 100%;
+    left: 0%;
+    top: 0%;
+    bottom: 88%;
     position: absolute;
+  }
+  
+  .sidenav a {
+    padding: 20px 20px 20px 32px;
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: bold;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 6%;
+    right: 0%;
+    font-size: 36px;
+    margin-left: 50px;
+  } 
+  
+  .sidenav hr {
+    width: 100%;
+    position: absolute;
+    left: 0%;
+    top: 81%;
+  }
+  
+  .topNavbar {
+    background-color: #333;
+    position: fixed;
+    top: -50px;
+    width: 100%;
+    display: block;
+    transition: top 0.3s;
+    z-index: 1;
+  }
+  
+  .topNavbar a {
     float: left;
-    max-height: 0;
+    display: block;
+    color: #818181;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: 0.3s;
+    font-weight: bold;
+  }
+  
+  .topNavbar a:hover {
+    color: white;
+  }
+  
+  .rightsidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 112px;
+    transition: 0.5s;
+  }
+  
+  .rightsidenav a, .dropdown-btn{
+    padding: 20px 20px 20px 20px!important;
+    text-decoration: none;
+    font-size: 25px!important;
+    color: #818181!important;
+    display: block;
+    border: none;
+    background: none;
+    width:100%;
+    text-align: center!important;
+    cursor: pointer;
+    outline: none;
     overflow: hidden;
-    transition: all .55s linear;
-    background-color: @base-white;
-    box-shadow: 0 0 3px rgba(0,0,0,.15);
-    
-    &.open {
-      max-height: 300px;
-      height: auto;
-      transition: all .25s linear;
-    }
-    
-    > li > a {
-      padding: .5rem 1rem;
-      display: block;
-      color: #555;
-      text-align: left;
-      transition: all .25s linear;
-      &:hover {
-        background-color: @base-blue;
-        color: @base-white;
-      }
-    }
+    -webkit-transition: all .7s ease-in-out;
+    -moz-transition: all .7s  ease-in-out;
+    -o-transition: all .7s  ease-in-out;
+    transition: all .7s  ease-in-out;
   }
-}
-
-.down-caret {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 5px 5px 0 5px;
-  border-color: #ffffff transparent transparent transparent;
-  display: inline-block;
-  margin-left: 6px;
-  top: -3px;
-  position: relative;
-  transform: rotate(0deg);
-  transition: all .25s ease-in;
-}
-
-  .open-caret {
-    transform: rotate(180deg);
-    transition: all .25s ease-out;
+  
+  .rightsidenav a:hover, .dropdown-btn:hover {
+    color: #f1f1f1!important;
   }
+  
+  /* Main content */
+  .main {
+    margin-left: 250px; /* Same as the width of the sidenav */
+    font-size: 20px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
+  
+  /* Add an active class to the active dropdown button */
+  .active {
+    background-color: #607d8b!important;
+    color: white!important;
+  }
+  
+  /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+  .dropdown-container {
+    display: none;
+    background-color: #262626;
+    padding: 8px 8px 8px 16px!important;
+  }
+  
+  /* Optional: Style the caret down icon */
+  .fa-caret-down {
+    /*float: right;*/
+    padding-right: 8px;
+    position: relative;
+    top: 13.5%;
+    right: -20%;
+    transition: all 0.5s ease!important;
+  }
+  
+  .rtoate180 {
+    transform: rotate(180deg)!important;
+  }
+
+  .rtoate-180 {
+    transform: rotate(-180deg)!important;
+  }
+  
+  #main {
+    transition: margin-right .5s;
+    padding: 16px;
+  }
+
+  #arrow { 
+    font-size:40px;
+    cursor:pointer;
+    border: none;
+    padding: 8px 16px;
+    background-color: #607d8b;
+    z-index: 0;
+    left: 97%;
+    -webkit-transition: all .7s ease-in-out;
+    -moz-transition: all .7s  ease-in-out;
+    -o-transition: all .7s  ease-in-out;
+    transition: all .7s  ease-in-out;
+  }
+
+  #arrow .fa-angle-double-right{
+    transition: all 0.5s ease;  
+  }
+  
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  
+  @media screen and (max-height: 450px) {
+    .rightsidenav {padding-top: 15px;}
+    .rightsidenav a {font-size: 18px;}
+  }
+  
+  
+  
+  
