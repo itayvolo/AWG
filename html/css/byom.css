@@ -1,0 +1,10 @@
+.script-box {
+    height: 100%;
+    width: 15%;
+    position: fixed;
+    top: 0;
+    right: 30%;
+    left: 30%;
+    background-color: #111;
+    border-radius: 50cm;
+  }

@@ -81,14 +81,14 @@ body {
 
 .rightsidenav {
   height: 100%;
-  width: 250px;
+  width: 15%;
   position: fixed;
   z-index: 1;
   top: 0;
   right: 0;
   background-color: #111;
   overflow-x: hidden;
-  padding-top: 112px;
+  padding-top: 6%;
   transition: 0.5s;
 }
 
@@ -115,6 +115,15 @@ body {
   color: #f1f1f1!important;
 }
 
+.rightsidenav .righttopsidenav {
+  background-color: #607d8b;
+  width: 100%;
+  right: 0%;
+  top: 0%;
+  bottom: 88%;
+  position: absolute;
+}
+
 /* Main content */
 .main {
   margin-left: 250px; /* Same as the width of the sidenav */
@@ -124,7 +133,7 @@ body {
 
 /* Add an active class to the active dropdown button */
 .active {
-  background-color: #607d8b!important;
+  background-color:gray!important;
   color: white!important;
 }
 
@@ -136,12 +145,12 @@ body {
 }
 
 /* Optional: Style the caret down icon */
-.fa-caret-down {
+.fa-caret-up {
   /*float: right;*/
-  padding-right: 8px;
+  padding-right: 5%;
   position: relative;
   top: 13.5%;
-  right: -20%;
+  right: -13%;
   transition: all 0.5s ease!important;
 }
 
@@ -149,9 +158,32 @@ body {
   transform: rotate(180deg)!important;
 }
 
+.rtoate-180 {
+  transform: rotate(-180deg)!important;
+}
+
 #main {
   transition: margin-right .5s;
   padding: 16px;
+}
+
+#arrow { 
+  font-size:40px;
+  cursor:pointer;
+  border: none;
+  padding: 8px 16px;
+  background-color: #607d8b;
+  z-index: 0;
+  left: 95%;
+  margin-top: 0.2%;
+  -webkit-transition: all .7s ease-in-out;
+  -moz-transition: all .7s  ease-in-out;
+  -o-transition: all .7s  ease-in-out;
+  transition: all .7s  ease-in-out;
+}
+
+#arrow .fa-angle-double-right{
+  transition: all 0.5s ease;  
 }
 
 
