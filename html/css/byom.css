@@ -1,10 +1,21 @@
+body {
+  background-color: aqua;
+}
+
 .script-box {
-    height: 100%;
-    width: 15%;
+  height: 75%;
+  width: 34%;
+  position: fixed;
+  top: 15%;
+  left: 25%;
+  background-color: rgb(212, 202, 202);
+  border-radius: 10%;
+  }
+
+  #myVideo {
     position: fixed;
-    top: 0;
-    right: 30%;
-    left: 30%;
-    background-color: #111;
-    border-radius: 50cm;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
   }

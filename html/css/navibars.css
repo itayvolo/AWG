@@ -164,7 +164,7 @@ body {
 
 #main {
   transition: margin-right .5s;
-  padding: 16px;
+  padding: 1%;
 }
 
 #arrow { 
@@ -175,7 +175,7 @@ body {
   background-color: #607d8b;
   z-index: 0;
   left: 95%;
-  margin-top: 0.2%;
+  margin-top: 0.05%;
   -webkit-transition: all .7s ease-in-out;
   -moz-transition: all .7s  ease-in-out;
   -o-transition: all .7s  ease-in-out;
