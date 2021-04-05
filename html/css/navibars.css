@@ -93,7 +93,7 @@ body {
 }
 
 .rightsidenav a, .dropdown-btn{
-  padding: 20px 20px 20px 20px!important;
+  padding: 10px 10px 10px 10px!important;
   text-decoration: none;
   font-size: 25px!important;
   color: #818181!important;
@@ -105,10 +105,10 @@ body {
   cursor: pointer;
   outline: none;
   overflow: hidden;
-  -webkit-transition: all .7s ease-in-out;
-  -moz-transition: all .7s  ease-in-out;
-  -o-transition: all .7s  ease-in-out;
-  transition: all .7s  ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s  ease-in-out;
+  -o-transition: all .5s  ease-in-out;
+  transition: all .5s  ease-in-out;
 }
 
 .rightsidenav a:hover, .dropdown-btn:hover {
@@ -152,6 +152,19 @@ body {
   top: 13.5%;
   right: -13%;
   transition: all 0.5s ease!important;
+}
+
+.plusim {
+  position: relative;
+  right: 30%;
+  color: #818181;
+  font-size: 145%;
+  display: inline-block;
+  
+}
+.plusim:hover{
+  color: #39a4da;
+  transition: .7s;
 }
 
 .rtoate180 {
