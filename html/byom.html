@@ -23,7 +23,7 @@
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <script src="js/jquery-3.5.1.min.js"></script>
 </head>
-<body onclick="left_close()">
+<body class="body" onclick="left_close()">
   <video autoplay muted loop id="myVideo">
     <source src="images/whitebg.mp4" type="video/mp4">
     Your browser does not support HTML5 video.
@@ -86,15 +86,29 @@
   <div style="position: absolute;width: 100%;top: 12.5%;">
     <button id="dropdown1" class="btn ripple-surface dropdown-btn active"><nobr>Self&nbsp;-&nbsp;Build<i id="caret1" class="fa fa-caret-up" style="right:-20%;"></i></nobr></button>
     <div id="dd-container1" class="dropdown-container" style="display: block;">
-      <a class="btn ripple-surface" href="#"><span id="plusi" class="plusim">&plus;</span>Link1</a>
-      <a class="btn ripple-surface" href="#"><span id="plusi" class="plusim">&plus;</span>Link2</a>
-      <a class="btn ripple-surface" href="#"><span id="plusi" class="plusim">&plus;</span>Link3</a>
-    </div>
-      <button id="dropdown2" class="btn ripple-surface dropdown-btn active"><nobr>Full&nbsp;Mashams<i id="caret2" class="fa fa-caret-up"></i></nobr></button>
-    <div id="dd-container2" class="dropdown-container" style="display: block;">
-      <a class="btn ripple-surface" href="#"><span id="plusi" class="plusim">&plus;</span>Link1</a>
-      <a class="btn ripple-surface" href="#"><span id="plusi" class="plusim">&plus;</span>Link2</a>
-      <a class="btn ripple-surface" href="#">Link3</a>
+      <div class="right_a">
+        <nobr><a class="plusim btn ripple-surface btn-circle btn-lg" href="#"><span id="sb1" class="plusim">&plus;</a><span class="script_title">Link1</span><a id="info1" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
+      </div>
+      <!--<div class="right_a">
+        <a class="plusim btn ripple-surface btn-circle btn-lg" href="#"><span id="sb2" class="plusim">&plus;</a><span class="script_title">Link 2</span><a id="info2" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a>
+      </div>
+      <div class="right_a">
+        <a class="plusim btn ripple-surface btn-circle btn-lg" href="#"><span id="sb3" class="plusim">&plus;</a><span class="script_title">Link 3</span><a id="info3" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a>
+      </div>-->
+    </div> 
+      <button id="dropdown2" class="btn ripple-surface dropdown-btn"><nobr>Full&nbsp;Mashams<i id="caret2" class="fa fa-caret-down"></i></nobr></button>
+    <div id="dd-container2" class="dropdown-container" style="display: none;">
+      <div class="right_a">
+        <nobr><a id="fm1" class="plusim btn ripple-surface btn-circle btn-lg">&plus;</a><span class="script_title">Link1</span><a id="info11" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
+      </div>
+      <hr>
+      <div class="right_a">
+        <nobr><a id="fm2" class="plusim btn ripple-surface btn-circle btn-lg">&plus;</a><span class="script_title">Link2</span><a id="info12" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
+      </div>
+      <hr>
+      <div class="right_a">
+        <nobr><a id="fm3" class="plusim btn ripple-surface btn-circle btn-lg">&plus;</a><span class="script_title">Link3</span><a id="info13" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
+      </div>
     </div>
   </div>
   </div>
@@ -116,8 +130,8 @@
 
     <!-- Footer -->
     <footer class="text-center text-lg-start" style="position: relative;background-color: #333;color: white;">
-      <div id="UpperFoot" class="p-2" style="position: relative;left: 1%;">
-        <h3>Automatic War Game</h3>
+      <div id="UpperFoot" class="p-2" style="position: relative;">
+        <h3>Oref Couture</h3>
         <p> Remember to check out our <a href="#" class="btn ripple-surface" style="color: teal;font-size: medium;position: relative;padding: 7px;top: 6px;left: 0.2%;"> Hafifa Area by Voodle </a></p>
       </div>
       <!-- Copyright -->
@@ -199,6 +213,26 @@ $(document).ready(function(){
     this.classList.toggle("active");
     $("#caret2").toggleClass("rtoate180");
     $("#dd-container2").stop().slideToggle(350);
+  });
+});
+
+//Plus Rotation
+
+$(document).ready(function(){
+  $("#fm1").click(function(){
+    $("#fm1").toggleClass("rtoate180");
+  });
+});
+
+$(document).ready(function(){
+  $("#fm2").click(function(){
+    $("#fm2").toggleClass("rtoate180");
+  });
+});
+
+$(document).ready(function(){
+  $("#fm3").click(function(){
+    $("#fm3").toggleClass("rtoate180");
   });
 });
 
