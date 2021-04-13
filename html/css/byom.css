@@ -2,7 +2,7 @@ body {
   box-sizing: border-box;
 }
 
-.script-box {
+/*.script-box {
   height: 75%;
   width: 34%;
   position: fixed;
@@ -10,6 +10,32 @@ body {
   left: 25%;
   background-color: rgb(212, 202, 202);
   border-radius: 10%;
+  }*/
+
+  .script-box { 
+    display: inline-block;
+    width: fit-content;
+    padding: 390px 17%;
+    background: rgb(193, 189, 189);
+    position: relative;
+    left: 8%;
+    top:25px!important;
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 10%);
+    transition: left .48s;
+    opacity: 0.7;
+  }
+
+  .log-box {
+    display: inline-block;
+    width: fit-content;
+    padding: 390px 17%;
+    background: rgb(193, 189, 189);
+    position: relative;
+    left: 11.5%;
+    top:25px!important;
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 10%);
+    transition: left .48s;
+    opacity: 0.7;
   }
 
   #myVideo {

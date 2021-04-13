@@ -82,6 +82,7 @@ body {
 .rightsidenav {
   height: 100%;
   width: 15%;
+  right: 0%;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -187,15 +188,15 @@ body {
 }
 
 .rtoate180 {
-  -moz-transform: rotate(180deg);
+ /* -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   -o-transform: rotate(180deg);
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg)!important;
+  -webkit-transform: rotate(180deg);*/
+  transform: rotate(179deg)!important;
 }
 
 .rtoate-180 {
-  transform: rotate(-180deg)!important;
+  transform: rotate(-179deg)!important;
 }
 
 #main {

@@ -28,8 +28,8 @@
 }
 
 .btn-circle {
-    width: 30px!important;
-    height: 30px!important;
+    /*width: 30px!important;
+    height: 30px!important;*/
     text-align: center!important;
     padding: 6px 0!important;
     font-size: 12px!important;
@@ -37,9 +37,9 @@
     border-radius: 15px!important;
   }
   .btn-circle.btn-lg {
-    width: 45px!important;
-    height: 45px!important;
-    padding: 10px 10px!important;
+    /*width: 45px!important;
+    height: 45px!important;*/
+    /*padding: 10px 10px!important;*/
     font-size: 18px;
     line-height: 0.9!important;
     border-radius: 25px!important;
@@ -58,10 +58,12 @@
     color: #818181!important;
     font-size: 145%!important;
     display: inline-block!important;
+    padding: 10px 13px!important;
+    transform: none;
     
   }
   .plusim:hover {
-    color: #39a4da!important;
+    color: #15a1ff!important;
     transition: all .2s ease-in-out;
   }
 
@@ -72,6 +74,7 @@
     left: 45%;
     display: inline-block!important;
     font-weight: bolder!important;
+    padding: 10px 10px!important;
   }
   .infos:hover  {
     position: relative!important;
@@ -92,4 +95,12 @@
   .script_title:hover {
     color: #818181;
 
+  }
+
+  .copyrights {
+    color:white;
+    display: inline-block;
+    position: relative;
+    left: 35.5%;
+    transition: .48s;
   }
