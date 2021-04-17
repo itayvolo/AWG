@@ -45,3 +45,24 @@ body {
     min-width: 100%; 
     min-height: 100%;
   }
+
+  label {
+    top: 15%!important;
+    background-color: white;
+    width: fit-content;
+    padding-top: 0%!important;
+  }
+  
+  input {
+    border: none!important;
+    outline: none!important;
+    border-bottom:1px solid gray!important;
+    transition: .1s!important;
+    width: 100%;
+  }
+
+  input:focus {
+    outline: 0!important;
+    border-bottom:2px solid blueviolet!important;
+    transition: .1s!important;
+  }

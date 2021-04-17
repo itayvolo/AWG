@@ -13,15 +13,14 @@
   <link rel="stylesheet" href="css/all.css">
   <link rel="stylesheet" href="css/smallStyles.css">
   <link rel="stylesheet" href="css/byom.css">
-  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-4.0/bootstrap.css">
+  <link rel="stylesheet" href="css/mdb.min.css">
   <!-- Google Fonts Roboto -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"/>
-  <!-- MDB -->
-  <link rel="stylesheet" href="css/mdb.min.css"/>
   <!--<script defer src="js/all.js"></script>-->
-  <script src="js/bootstrap.js"></script>
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <script src="js/jquery-3.5.1.min.js"></script>
+  <script src="js/bootstrap-4.0/bootstrap.min.js"></script>
 </head>
 <body class="body" onclick="left_close()">
   <video autoplay muted loop id="myVideo">
@@ -31,19 +30,10 @@
 <!-- Header -->
 <header class="container-xxl w3-theme-blue-grey" id="myHeader" style="position: absolute;height: 12%!important;">
     <button class="btn ripple-surface" style="font-size:40px;cursor:pointer;border: none;padding: 8px 16px;background-color: #607d8b;z-index: 0;top: 16%;" onclick="left_open()">☰</button>
-    <button
-  type="button"
-  class="btn btn-primary"
-  data-mdb-toggle="modal"
-  data-mdb-target="#exampleModal"
-  data-mdb-whatever="@getbootstrap"
->
-  Open modal for @getbootstrap
-</button>
 </header>
 <div id="main" style="margin-right: 15%;">
   <button id="arrow" class="btn ripple-surface" onclick="right_close();"><i class="fas fa-angle-double-right"></i></button>
-  <h1 id="main-title" class="text-center align-middle" style="position: relative;top: 4%;left: 32.5%;color:#ffffff;display: inline-block;transition: left .48s;">Automatic War Games</h1>
+  <h1 id="main-title" class="text-center align-middle" style="position: relative;top: 4%;left: 32.5%;display: inline-block;transition: left .48s;">Automatic War Games</h1>
 </div>
 
 <!-- Left Side Navigation -->
@@ -96,30 +86,30 @@
     <button id="dropdown1" class="btn ripple-surface dropdown-btn active"><nobr>Self&nbsp;-&nbsp;Build<i id="caret1" class="fa fa-caret-up" style="right:-20%;"></i></nobr></button>
     <div id="dd-container1" class="dropdown-container" style="display: block;">
       <div class="right_a">
-        <nobr><a id="plus_sb1" class="plusim btn ripple-surface btn-circle btn-lg">&plus;</a><span class="script_title">Link1</span><a id="info1" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
+        <nobr><button type="button" id="plus_sb1" class="plusim btn ripple-surface btn-circle btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="File Check">&plus;</button><span class="script_title">Service Check</span><a id="info1" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
       </div>
       <hr>
       <div class="right_a">
-        <nobr><a id="plus_sb2" class="plusim btn ripple-surface btn-circle btn-lg">&plus;</a><span class="script_title">Link2</span><a id="info2" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
+        <nobr><button type="button" id="plus_sb2" class="plusim btn ripple-surface btn-circle btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="File Check">&plus;</button><span class="script_title">FS Explosion</span><a id="info2" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
       </div>
       <hr>
       <div class="right_a">
-        <nobr><a id="plus_sb3" class="plusim btn ripple-surface btn-circle btn-lg">&plus;</a><span class="script_title">Link3</span><a id="info3" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
+        <nobr><button type="button" id="plus_sb3" class="plusim btn ripple-surface btn-circle btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="File Check">&plus;</button><span class="script_title">Reboot</span><a id="info3" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
       </div>
     </div> 
     <!--Full Mashams Tab-->
       <button id="dropdown2" class="btn ripple-surface dropdown-btn"><nobr>Full&nbsp;Mashams<i id="caret2" class="fa fa-caret-down"></i></nobr></button>
     <div id="dd-container2" class="dropdown-container" style="display: none;">
       <div class="right_a">
-        <nobr><a id="plus_fm1" class="plusim btn ripple-surface btn-circle btn-lg">&plus;</a><span class="script_title">Link1</span><a id="info11" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
+        <nobr><button type="button" id="plus_fm1" class="plusim btn ripple-surface btn-circle btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="File Check">&plus;</button><span class="script_title">XRM</span><a id="info11" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
       </div>
       <hr>
       <div class="right_a">
-        <nobr><a id="plus_fm2" class="plusim btn ripple-surface btn-circle btn-lg">&plus;</a><span class="script_title">Link2</span><a id="info12" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
+        <nobr><button type="button" id="plus_fm2" class="plusim btn ripple-surface btn-circle btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="File Check" onclick="rotation()">&plus;</button><span class="script_title">IDM</span><a id="info12" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
       </div>
       <hr>
       <div class="right_a">
-        <nobr><button type="button" id="plus_fm3" class="plusim btn ripple-surface btn-circle btn-lg" data-mdb-toggle="modal" data-mdb-target="#exampleModal" data-mdb-whatever="@getbootstrap">&plus;</button><span class="script_title">Link3</span><a id="info13" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
+        <nobr><button type="button" id="plus_fm3" class="plusim btn ripple-surface btn-circle btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="File Check">&plus;</button><span class="script_title">Exchange</span><a id="info13" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
       </div>
     </div>
   </div>
@@ -132,30 +122,30 @@
   </div>
 
 <!--Box-Modal-->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-header" style="background-color: #607d8b;">
+        <h5 class="modal-title" id="exampleModalLabel">File Check</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" style="color: #818181;">&times;</span>
+        </button>
       </div>
       <div class="modal-body">
         <form>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Recipient:</label>
-            <input type="text" class="form-control" id="recipient-name" />
+          <div class="form-outline mb-4">
+            <input type="email" id="form1Example1" class="form-control" />
+            <label class="form-label" for="form1Example1">Email address</label>
           </div>
-          <div class="mb-3">
-            <label for="message-text" class="col-form-label">Message:</label>
+          <div class="form-outline mb-4">
             <textarea class="form-control" id="message-text"></textarea>
+            <label for="file-path" class="col-form-label">File Path:</label>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
-          Close
-        </button>
-        <button type="button" class="btn btn-primary">Send message</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Add Script</button>
       </div>
     </div>
   </div>
@@ -183,47 +173,41 @@
 <!-- Footer -->
 
 <script>
-const exampleModal = document.getElementById('exampleModal')
-exampleModal.addEventListener('show.mdb.modal', (event) => {
-  // Button that triggered the modal
-  const button = event.relatedTarget
-  // Extract info from data-mdb-* attributes
-  const recipient = button.getAttribute('data-mdb-whatever')
-  // If necessary, you could initiate an AJAX request here
-  // and then do the updating in a callback.
-  //
-  // Update the modal's content.
-  const modalTitle = exampleModal.querySelector('.modal-title')
-  const modalBodyInput = exampleModal.querySelector('.modal-body input')
+//$('#exampleModal').on('show.bs.modal', function (event) {
+//  var button = $(event.relatedTarget) // Button that triggered the modal
+//  var Name = button.data('whatever') // Extract info from data-* attributes
+//  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+//  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+//  var modal = $(this)
+//  modal.find('.modal-title').text(Name + ' Script')
+//  modal.find(".modal-body label[for='server-name']").replaceWith(Name + ':')
+//})
 
-  modalTitle.textContent = 'New message to ${recipient}'
-  modalBodyInput.value = recipient
-})
-    //LeftSideNav
-    
-    function left_open() {
-    event.stopPropagation();
-    document.getElementById("LeftSidebar").style.width = "28%";
-    //x.style.width = "35%";
-    //x.style.fontSize = "40px";
-    //x.style.paddingTop = "10%";
-    //x.style.display = "block";
-    }
+  //LeftSideNav
+  
+function left_open() {
+  event.stopPropagation();
+  document.getElementById("LeftSidebar").style.width = "28%";
+  //x.style.width = "35%";
+  //x.style.fontSize = "40px";
+  //x.style.paddingTop = "10%";
+  //x.style.display = "block";
+  }
 
-    function left_close() {
-    document.getElementById("LeftSidebar").style.width = "0";
-    }
+function left_close() {
+  document.getElementById("LeftSidebar").style.width = "0";
+  }
 
-    //RightSideNav
+  //RightSideNav
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function right_open() {
   document.getElementById("arrow").setAttribute('onclick','right_close()')
 
   document.getElementById("RightSidebar").style.right = "0%";
   document.getElementById("main").style.marginRight = "15%";
-  document.getElementById("scriptbox").style.left = "8%"
-  document.getElementById("logbox").style.left = "11.5%"
-  document.getElementById("copyrights").style.left = "35.5%"
+  document.getElementById("scriptbox").style.left = "8%";
+  document.getElementById("logbox").style.left = "11.5%";
+  document.getElementById("copyrights").style.left = "35.5%";
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
@@ -232,9 +216,9 @@ function right_close() {
 
   document.getElementById("RightSidebar").style.right = "-15%";
   document.getElementById("main").style.marginRight = "0";
-  document.getElementById("scriptbox").style.left = "13%"
-  document.getElementById("logbox").style.left = "16.5%"
-  document.getElementById("copyrights").style.left = "40.5%"
+  document.getElementById("scriptbox").style.left = "13%";
+  document.getElementById("logbox").style.left = "16.5%";
+  document.getElementById("copyrights").style.left = "40.5%";
 
 }
 
@@ -302,17 +286,21 @@ $(document).ready(function(){
   });
 });
 
-$(document).ready(function(){
-  $("#plus_fm2").click(function(){
-    $("#plus_fm2").toggleClass("rtoate180");
-  });
-});
+//$(document).ready(function(){
+//  $("#plus_fm2").click(function(){
+//    $("#plus_fm2").toggleClass("rtoate180");
+//  });
+//});
 
 $(document).ready(function(){
   $("#plus_fm3").click(function(){
     $("#plus_fm3").toggleClass("rtoate180");
   });
 });
+
+function rotation(){
+  document.getElementById("plus_fm2").toggleClass = "rotate180";
+}
 
 </script>
 </body>
