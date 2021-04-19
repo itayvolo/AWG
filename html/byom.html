@@ -86,30 +86,30 @@
     <button id="dropdown1" class="btn ripple-surface dropdown-btn active"><nobr>Self&nbsp;-&nbsp;Build<i id="caret1" class="fa fa-caret-up" style="right:-20%;"></i></nobr></button>
     <div id="dd-container1" class="dropdown-container" style="display: block;">
       <div class="right_a">
-        <nobr><button type="button" id="plus_sb1" class="plusim btn ripple-surface btn-circle btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="File Check">&plus;</button><span class="script_title">Service Check</span><a id="info1" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
+        <nobr><button type="button" id="plus_sb1" class="plusim btn ripple-surface btn-circle btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="Service">&plus;</button><span id="Service" class="script_title">Service Check</span><a id="info1" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
       </div>
       <hr>
       <div class="right_a">
-        <nobr><button type="button" id="plus_sb2" class="plusim btn ripple-surface btn-circle btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="File Check">&plus;</button><span class="script_title">FS Explosion</span><a id="info2" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
+        <nobr><button type="button" id="plus_sb2" class="plusim btn ripple-surface btn-circle btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="File Path">&plus;</button><span id="File Path" class="script_title">FS Explosion</span><a id="info2" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
       </div>
       <hr>
       <div class="right_a">
-        <nobr><button type="button" id="plus_sb3" class="plusim btn ripple-surface btn-circle btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="File Check">&plus;</button><span class="script_title">Reboot</span><a id="info3" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
+        <nobr><button type="button" id="plus_sb3" class="plusim btn ripple-surface btn-circle btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="Timeout (Seconds)">&plus;</button><span id="Timeout (Seconds)" class="script_title">Reboot</span><a id="info3" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
       </div>
     </div> 
     <!--Full Mashams Tab-->
       <button id="dropdown2" class="btn ripple-surface dropdown-btn"><nobr>Full&nbsp;Mashams<i id="caret2" class="fa fa-caret-down"></i></nobr></button>
     <div id="dd-container2" class="dropdown-container" style="display: none;">
       <div class="right_a">
-        <nobr><button type="button" id="plus_fm1" class="plusim btn ripple-surface btn-circle btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="File Check">&plus;</button><span class="script_title">XRM</span><a id="info11" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
+        <nobr><button type="button" id="plus_fm1" class="plusim btn ripple-surface btn-circle btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="XRM">&plus;</button><span id="XRM" class="script_title">XRM</span><a id="info11" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
       </div>
       <hr>
       <div class="right_a">
-        <nobr><button type="button" id="plus_fm2" class="plusim btn ripple-surface btn-circle btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="File Check" onclick="rotation()">&plus;</button><span class="script_title">IDM</span><a id="info12" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
+        <nobr><button type="button" id="plus_fm2" class="plusim btn ripple-surface btn-circle btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="IDM">&plus;</button><span id="IDM" class="script_title">IDM</span><a id="info12" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
       </div>
       <hr>
       <div class="right_a">
-        <nobr><button type="button" id="plus_fm3" class="plusim btn ripple-surface btn-circle btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="File Check">&plus;</button><span class="script_title">Exchange</span><a id="info13" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
+        <nobr><button type="button" id="plus_fm3" class="plusim btn ripple-surface btn-circle btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="Exchange">&plus;</button><span id="Exchange" class="script_title">Exchange</span><a id="info13" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
       </div>
     </div>
   </div>
@@ -126,7 +126,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" style="background-color: #607d8b;">
-        <h5 class="modal-title" id="exampleModalLabel">File Check</h5>
+        <h4 class="modal-title" id="exampleModalLabel">File Check:</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true" style="color: #818181;">&times;</span>
         </button>
@@ -135,17 +135,17 @@
         <form>
           <div class="form-outline mb-4">
             <input type="email" id="form1Example1" class="form-control" />
-            <label class="form-label" for="form1Example1">Email address</label>
+            <label for="first-label" class="form-label">Server</label>
           </div>
           <div class="form-outline mb-4">
-            <textarea class="form-control" id="message-text"></textarea>
-            <label for="file-path" class="col-form-label">File Path:</label>
+            <input type="text" id="form1Example1" class="form-control" />
+            <label for="second-label" class="form-label">Script Main Variable</label>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Add Script</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color:#818181;">Dismiss</button>
+        <button type="button" class="btn btn-primary" style="background-color: #607D99;">Add Script</button>
       </div>
     </div>
   </div>
@@ -173,15 +173,17 @@
 <!-- Footer -->
 
 <script>
-//$('#exampleModal').on('show.bs.modal', function (event) {
-//  var button = $(event.relatedTarget) // Button that triggered the modal
-//  var Name = button.data('whatever') // Extract info from data-* attributes
-//  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-//  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-//  var modal = $(this)
-//  modal.find('.modal-title').text(Name + ' Script')
-//  modal.find(".modal-body label[for='server-name']").replaceWith(Name + ':')
-//})
+$('#exampleModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var Main_Variable = button.data('whatever') // Extract info from data-* attributes
+  var get_Name = Main_Variable.val
+  var Name = $("#" + get_Name)
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text(Name)
+  modal.find(".modal-body label[for='second-label']").replaceWith('<label class="form-label" for="form1Example1">'+ Main_Variable + '</label>')
+})
 
   //LeftSideNav
   
