@@ -86,15 +86,15 @@
     <button id="dropdown1" class="btn ripple-surface dropdown-btn active"><nobr>Self&nbsp;-&nbsp;Build<i id="caret1" class="fa fa-caret-up" style="right:-20%;"></i></nobr></button>
     <div id="dd-container1" class="dropdown-container" style="display: block;">
       <div class="right_a">
-        <nobr><button type="button" id="plus_sb1" class="plusim btn ripple-surface btn-circle btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="Service">&plus;</button><span id="Service" class="script_title">Service Check</span><a id="info1" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
+        <nobr><button type="button" id="plus_sb1" class="plusim btn ripple-surface btn-circle btn-lg" onclick="open_modal('Service','Service Check')">&plus;</button><span id="Service" class="script_title">Service Check</span><a id="info1" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
       </div>
       <hr>
       <div class="right_a">
-        <nobr><button type="button" id="plus_sb2" class="plusim btn ripple-surface btn-circle btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="File Path">&plus;</button><span id="File Path" class="script_title">FS Explosion</span><a id="info2" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
+        <nobr><button type="button" id="plus_sb2" class="plusim btn ripple-surface btn-circle btn-lg" onclick="open_modal('File Path','FS Explosion')">&plus;</button><span id="File Path" class="script_title">FS Explosion</span><a id="info2" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
       </div>
       <hr>
       <div class="right_a">
-        <nobr><button type="button" id="plus_sb3" class="plusim btn ripple-surface btn-circle btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="Timeout (Seconds)">&plus;</button><span id="Timeout (Seconds)" class="script_title">Reboot</span><a id="info3" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
+        <nobr><button type="button" id="plus_sb3" class="plusim btn ripple-surface btn-circle btn-lg" onclick="open_modal('Timeout (Seconds)', 'Reboot')">&plus;</button><span id="Timeout (Seconds)" class="script_title">Reboot</span><a id="info3" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
       </div>
     </div> 
     <!--Full Mashams Tab-->
@@ -135,16 +135,16 @@
         <form>
           <div class="form-outline mb-4">
             <input type="email" id="form1Example1" class="form-control" />
-            <label for="first-label" class="form-label">Server</label>
+            <label id="first-label" class="form-label">Server</label>
           </div>
           <div class="form-outline mb-4">
             <input type="text" id="form1Example1" class="form-control" />
-            <label for="second-label" class="form-label">Script Main Variable</label>
+            <label id="second-label" class="form-label">Script Main Variable</label>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color:#818181;">Dismiss</button>
+        <button type="button" class="btn btn-secondary" onclick="close_modal()" style="background-color:#818181;">Dismiss</button>
         <button type="button" class="btn btn-primary" style="background-color: #607D99;">Add Script</button>
       </div>
     </div>
@@ -173,17 +173,22 @@
 <!-- Footer -->
 
 <script>
-$('#exampleModal').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) // Button that triggered the modal
-  var Main_Variable = button.data('whatever') // Extract info from data-* attributes
-  var get_Name = Main_Variable.val
-  var Name = $("#" + get_Name)
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-  var modal = $(this)
-  modal.find('.modal-title').text(Name)
-  modal.find(".modal-body label[for='second-label']").replaceWith('<label class="form-label" for="form1Example1">'+ Main_Variable + '</label>')
-})
+function open_modal(main_variable,Name)
+  {  
+    //var get_Name = $("#" + Main_Variable).html();
+    //var Name = $("#" + Main_Variable).text;
+    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    var modal = $('#exampleModal');
+    modal.find('.modal-title').text(Name);
+    modal.find('.modal-body #second-label').text(main_variable);
+    modal.modal('show');
+  }
+function close_modal()
+{
+  var modal = $('#exampleModal');
+  modal.modal('hide');
+}
 
   //LeftSideNav
   
