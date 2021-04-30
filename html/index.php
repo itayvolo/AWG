@@ -32,7 +32,7 @@
   <br>
   <a href='javascript:onclick=w3_close();'>Home</a>
   <br>
-  <a href="byom.html" >Build&nbsp;Your&nbsp;Own&nbsp;Masham</a>
+  <a href="byom.php" >Build&nbsp;Your&nbsp;Own&nbsp;Masham</a>
   <br>
   <a href="#" >Masham&nbsp;List</a>
   <br>

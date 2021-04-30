@@ -21,6 +21,7 @@
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <script src="js/jquery-3.5.1.min.js"></script>
   <script src="js/bootstrap-4.0/bootstrap.min.js"></script>
+  <script src="assets/includes/post-functions.js"></script>
 </head>
 <body class="body" onclick="left_close()">
   <video autoplay muted loop id="myVideo">
@@ -86,15 +87,15 @@
     <button id="dropdown1" class="btn ripple-surface dropdown-btn active"><nobr>Self&nbsp;-&nbsp;Build<i id="caret1" class="fa fa-caret-up" style="right:-20%;"></i></nobr></button>
     <div id="dd-container1" class="dropdown-container" style="display: block;">
       <div class="right_a">
-        <nobr><button type="button" id="plus_sb1" class="plusim btn ripple-surface btn-circle btn-lg" onclick="open_modal('Service','Service Check')">&plus;</button><span id="Service" class="script_title">Service Check</span><a id="info1" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
+        <nobr><button type="button" id="plus_sb1" class="plusim btn ripple-surface btn-circle btn-lg" onclick="open_modal('Service','Service Check','Save_SB1');">&plus;</button><span id="Service" class="script_title">Service Check</span><a id="info1" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
       </div>
       <hr>
       <div class="right_a">
-        <nobr><button type="button" id="plus_sb2" class="plusim btn ripple-surface btn-circle btn-lg" onclick="open_modal('File Path','FS Explosion')">&plus;</button><span id="File Path" class="script_title">FS Explosion</span><a id="info2" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
+        <nobr><button type="button" id="plus_sb2" class="plusim btn ripple-surface btn-circle btn-lg" onclick="open_modal('File Path','FS Explosion');">&plus;</button><span id="File Path" class="script_title">FS Explosion</span><a id="info2" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
       </div>
       <hr>
       <div class="right_a">
-        <nobr><button type="button" id="plus_sb3" class="plusim btn ripple-surface btn-circle btn-lg" onclick="open_modal('Timeout (Seconds)', 'Reboot')">&plus;</button><span id="Timeout (Seconds)" class="script_title">Reboot</span><a id="info3" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
+        <nobr><button type="button" id="plus_sb3" class="plusim btn ripple-surface btn-circle btn-lg" onclick="open_modal('Timeout (Seconds)','Reboot');">&plus;</button><span id="Timeout (Seconds)" class="script_title">Reboot</span><a id="info3" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
       </div>
     </div> 
     <!--Full Mashams Tab-->
@@ -127,25 +128,25 @@
     <div class="modal-content">
       <div class="modal-header" style="background-color: #607d8b;">
         <h4 class="modal-title" id="exampleModalLabel">File Check:</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" onclick="close_modal();" aria-label="Close">
           <span aria-hidden="true" style="color: #818181;">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <form>
           <div class="form-outline mb-4">
-            <input type="email" id="form1Example1" class="form-control" />
+            <input type="email" id="server_v" class="form-control" />
             <label id="first-label" class="form-label">Server</label>
           </div>
           <div class="form-outline mb-4">
-            <input type="text" id="form1Example1" class="form-control" />
+            <input type="text" id="main_v" class="form-control" />
             <label id="second-label" class="form-label">Script Main Variable</label>
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" onclick="close_modal()" style="background-color:#818181;">Dismiss</button>
-        <button type="button" class="btn btn-primary" style="background-color: #607D99;">Add Script</button>
+        <button id="run" type="button" class="btn btn-primary" style="background-color: #607D99;" onclick="Save_SB1()">Add Script</button>
       </div>
     </div>
   </div>
@@ -182,6 +183,7 @@ function open_modal(main_variable,Name)
     var modal = $('#exampleModal');
     modal.find('.modal-title').text(Name);
     modal.find('.modal-body #second-label').text(main_variable);
+    //modal.find('.modal-footer #run').onclick=function(){Save_SB1()};
     modal.modal('show');
   }
 function close_modal()
