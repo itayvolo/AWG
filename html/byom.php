@@ -32,11 +32,11 @@
 <header class="container-xxl w3-theme-blue-grey" id="myHeader" style="position: absolute;height: 12%!important;">
     <button class="btn ripple-surface" style="font-size:40px;cursor:pointer;border: none;padding: 8px 16px;background-color: #607d8b;z-index: 0;top: 16%;" onclick="left_open()">☰</button>
 </header>
-<div id="main" style="margin-right: 15%;">
+<div id="main" style="width:85%; transition:0.5s;">
   <button id="arrow" class="btn ripple-surface" onclick="right_close();"><i class="fas fa-angle-double-right"></i></button>
-  <h1 id="main-title" class="text-center align-middle" style="position: relative;top: 4%;left: 32.5%;display: inline-block;transition: left .48s;">Automatic War Games</h1>
+  <h1 id="main-title" class="text-center align-middle" style="position: relative;top: 4%;left: 32.5%;display: inline-block;transition: left .5s;">Automatic War Games</h1>
 </div>
-
+<br>
 <!-- Left Side Navigation -->
 <div class="sidenav" id="LeftSidebar" onclick="event.stopPropagation();">
   <div class="topsidenav" id="topSidebar">
@@ -117,9 +117,11 @@
 </div>
 <!--Script-Box-->
   <div id="scriptbox" class="script-box">
+    <h3 class="box_title">Script-Box</h3>
   </div>
 <!--Log-Box-->
   <div id="logbox" class="log-box">
+  <h3 class="box_title">Log-Box</h3>
   </div>
 
 <!--Box-Modal-->
@@ -146,7 +148,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" onclick="close_modal()" style="background-color:#818181;">Dismiss</button>
-        <button id="run" type="button" class="btn btn-primary" style="background-color: #607D99;" onclick="Save_SB1()">Add Script</button>
+        <button id="run" type="button" class="btn btn-primary" style="background-color: #607D99;" onclick="save_add_var(),close_modal()">Add Script</button><!--onclick="Save_SB1()"-->
       </div>
     </div>
   </div>
@@ -154,10 +156,9 @@
 
   <br>
   <br>
-  <hr>
 
 <!-- Footer -->
-  <footer class="text-center text-lg-start" style="position: relative;background-color: #333;color: white;">
+  <footer class="text-center text-lg-start my_footer">
     <div id="UpperFoot" class="p-2" style="position: relative;">
       <h3>Oref Couture</h3>
       <p> Remember to check out our <a href="#" class="btn ripple-surface" style="color: teal;font-size: medium;position: relative;padding: 7px;top: 6px;left: 0.2%;"> Hafifa Area by Voodle </a></p>
@@ -192,6 +193,33 @@ function close_modal()
   modal.modal('hide');
 }
 
+//Save Modal Variables
+function save_add_var() {
+  var input1 = (document.getElementById("server_v")).value;
+  var input2 = document.getElementById("main_v").value;
+
+  var base_top = 10;
+  var sbs_count = $('#scriptbox').children('div').length;
+  var sbs_latest = sbs_count + 1;
+  var sbs_latest_id = "task_" + (sbs_latest);
+  var parant_html = document.getElementById("scriptbox");
+    parant_html.innerHTML += "<div class='sb_inside_box'></div>";
+
+  task_html = $('#scriptbox').children('div')[sbs_count]
+  task_html.setAttribute('id', sbs_latest_id);
+
+  if (sbs_latest == 1) {
+    task_html.style['top'] = base_top + '%';
+  }
+
+  else  {
+    var latest_top = ($('#scriptbox').children('div')[sbs_count -1]).style['top'];
+    latest_top = latest_top.replace('%', ""); //DONT FORGET TO FIX THIS!
+    task_html.style['top'] = (Number(latest_top) + 15) + '%';
+  }
+
+}
+
   //LeftSideNav
   
 function left_open() {
@@ -213,9 +241,9 @@ function right_open() {
   document.getElementById("arrow").setAttribute('onclick','right_close()')
 
   document.getElementById("RightSidebar").style.right = "0%";
-  document.getElementById("main").style.marginRight = "15%";
-  document.getElementById("scriptbox").style.left = "8%";
-  document.getElementById("logbox").style.left = "11.5%";
+  document.getElementById("main").style.width = "85%";
+  document.getElementById("scriptbox").style.left = "7%";
+  document.getElementById("logbox").style.left = "11%";
   document.getElementById("copyrights").style.left = "35.5%";
 }
 
@@ -224,9 +252,9 @@ function right_close() {
   document.getElementById("arrow").setAttribute('onclick','right_open()')
 
   document.getElementById("RightSidebar").style.right = "-15%";
-  document.getElementById("main").style.marginRight = "0";
-  document.getElementById("scriptbox").style.left = "13%";
-  document.getElementById("logbox").style.left = "16.5%";
+  document.getElementById("main").style.width = "100%";
+  document.getElementById("scriptbox").style.left = "12%";
+  document.getElementById("logbox").style.left = "16%";
   document.getElementById("copyrights").style.left = "40.5%";
 
 }

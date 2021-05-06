@@ -14,28 +14,53 @@ body {
 
   .script-box { 
     display: inline-block;
-    width: fit-content;
-    padding: 390px 17%;
+    /*width: fit-content;*/
+    padding: 330px 330px;
     background: rgb(193, 189, 189);
     position: relative;
-    left: 8%;
-    top:25px!important;
+    left: 7%;
+    top:16%;
     box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 10%);
     transition: left .48s;
-    opacity: 0.7;
+    opacity: 0.5;
+    /*bottom: 321px;*/
+  }
+  .box_title  {
+    position: absolute;
+    top: 1%;
+    left: 42%;
+  }
+  .sb_inside_box  {
+    position: absolute; 
+    width: 82%;
+    left: 8%;
+    top: 10%;
+    height: 12%;
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 80%), 0 4px 20px 0 rgb(0 0 0 / 80%);
+    transition: left .48s;
   }
 
   .log-box {
     display: inline-block;
-    width: fit-content;
-    padding: 390px 17%;
+    /*width: fit-content;*/
+    padding: 330px 330px;
     background: rgb(193, 189, 189);
     position: relative;
-    left: 11.5%;
-    top:25px!important;
+    left: 11%;
+    top: 16%;
     box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 10%);
     transition: left .48s;
-    opacity: 0.7;
+    opacity: 0.5;
+    /*bottom: 321px;*/
+  }
+  
+  .my_footer  {
+    display: block;
+    position: relative;
+    width: 100%;
+    top: 100%;
+    background-color: #333;
+    color: white;
   }
 
   #myVideo {
