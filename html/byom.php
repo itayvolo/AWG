@@ -116,13 +116,15 @@
   </div>
 </div>
 <!--Script-Box-->
-  <div id="scriptbox" class="script-box">
-    <h3 class="box_title">Script-Box</h3>
-  </div>
+<div id="scriptbox" class="script-box">
+  <!--<div id="scriptgraybox" class="script-gray-box"></div>-->
+  <h3 class="box_title">Script-Box</h3>
+</div>
 <!--Log-Box-->
-  <div id="logbox" class="log-box">
-  <h3 class="box_title">Log-Box</h3>
-  </div>
+<div id="logbox" class="log-box">
+  <!--<div id="loggraybox" class="log-gray-box"></div>-->
+  <h3 class="box_title">log-Box</h3>
+</div>
 
 <!--Box-Modal-->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -148,7 +150,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" onclick="close_modal()" style="background-color:#818181;">Dismiss</button>
-        <button id="run" type="button" class="btn btn-primary" style="background-color: #607D99;" onclick="save_add_var(),close_modal()">Add Script</button><!--onclick="Save_SB1()"-->
+        <button id="run" type="button" class="btn btn-primary" style="background-color: #607D99;" onclick="add_sb(),close_modal()">Add Script</button><!--onclick="Save_SB1()"-->
       </div>
     </div>
   </div>
@@ -187,36 +189,47 @@ function open_modal(main_variable,Name)
     //modal.find('.modal-footer #run').onclick=function(){Save_SB1()};
     modal.modal('show');
   }
-function close_modal()
-{
-  var modal = $('#exampleModal');
-  modal.modal('hide');
-}
 
-//Save Modal Variables
-function save_add_var() {
+function close_modal()
+  {
+    var modal = $('#exampleModal');
+    modal.modal('hide');
+  }
+
+//Add Self Build Script
+function add_sb() {
+  var variable1 = $('#first-label').val;
+  var variable2 = (document.getElementById('second-label')).value;
+
   var input1 = (document.getElementById("server_v")).value;
-  var input2 = document.getElementById("main_v").value;
+  var input2 = (document.getElementById("main_v")).value;
 
   var base_top = 10;
   var sbs_count = $('#scriptbox').children('div').length;
   var sbs_latest = sbs_count + 1;
   var sbs_latest_id = "task_" + (sbs_latest);
   var parant_html = document.getElementById("scriptbox");
-    parant_html.innerHTML += "<div class='sb_inside_box'></div>";
+      parant_html.innerHTML += "<div class='sb_inside_box'></div>";
 
   task_html = $('#scriptbox').children('div')[sbs_count]
   task_html.setAttribute('id', sbs_latest_id);
 
-  if (sbs_latest == 1) {
-    task_html.style['top'] = base_top + '%';
-  }
+  ($('#' + sbs_latest_id)).addClass('slide_animation')
+  window.setTimeout(function()  {
+    ($('#' + sbs_latest_id)).removeClass('slide_animation')   
+  }, 1000);
 
-  else  {
-    var latest_top = ($('#scriptbox').children('div')[sbs_count -1]).style['top'];
-    latest_top = latest_top.replace('%', ""); //DONT FORGET TO FIX THIS!
-    task_html.style['top'] = (Number(latest_top) + 15) + '%';
-  }
+  alert(variable1);
+
+  //if (sbs_latest == 1) {
+  //  task_html.style['top'] = base_top + '%';
+  //}
+  //
+  //else  {
+  //  var latest_top = ($('#scriptbox').children('div')[sbs_count -1]).style['top'];
+  //  latest_top = latest_top.replace('%', ""); //DONT FORGET TO FIX THIS!
+  //  task_html.style['top'] = (Number(latest_top) + 15) + '%';
+  //}
 
 }
 
