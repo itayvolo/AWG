@@ -16,12 +16,14 @@ body {
     display: inline-block;
     position: relative;
     width: 34.3%;
-    min-height: 660px;
+    height: 660px;
     left: 7%;
     background: rgb(193, 189, 189);
     box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 10%);
     transition: left .48s;
     opacity: 0.5;
+    overflow-y: auto;
+    border-radius: 2%;
   }
 
   .box_title  {
@@ -35,16 +37,30 @@ body {
     margin-inline: 9%;
     margin-block: 3%;
     box-shadow: 0 4px 10px 0 rgb(0 0 0 / 80%), 0 4px 20px 0 rgb(0 0 0 / 80%);
-    transition: .48s;
+    transition: transform .8s ease-in-out;
+    border-radius: 5px;
+    overflow-x: hidden;
+    overflow-y: hidden;
   }
 
+  .fade-in-text {
+    display: block;
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    /*font-size: 100%;*/
+    color: black;
+    animation: fadeIn linear .8s;
+    -webkit-animation: fadeIn linear .8s;
+    -moz-animation: fadeIn linear .8s;
+    -o-animation: fadeIn linear .8s;
+    -ms-animation: fadeIn linear .8s;
+  }
 
   .slide_animation  {
-    -moz-animation: slide 1s ease .0s forwards;
-    -webkit-animation: slide 1s ease .1s forwards;
-    -o-animation: slide 1s ease .1s forwards;
-    -ms-animation: slide 1s ease .1s forwards;
-     animation: slide 1s ease .1s forwards;
+    -moz-animation: slide .8s ease .0s forwards;
+    -webkit-animation: slide .8s ease .1s forwards;
+    -o-animation: slide .8s ease .1s forwards;
+    -ms-animation: slide .8s ease .1s forwards;
+     animation: slide .8s ease .1s forwards;
      animation-fill-mode: both;
      /*overflow: hidden;*/
   }
@@ -53,12 +69,14 @@ body {
     display: inline-block;
     position: relative;
     width: 34.3%;
-    min-height: 660px;
+    height: 660px;
     left: 11%;
     background: rgb(193, 189, 189);
     box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 10%);
     transition: left .48s;
     opacity: 0.5;
+    overflow-y: auto;
+    border-radius: 2%;
   }
 
   .log-gray-box {
@@ -123,6 +141,7 @@ body {
     padding-top: 18px;
   }
 
+  /*Slide Animation*/
   @-moz-keyframes slide /* Firefox */
   {
   from {width: 0%;margin-inline: 0%;}
@@ -151,4 +170,31 @@ body {
   {
     from {width: 0%;margin-inline: 0%;}
     to {width: 82%;margin-inline: 9%;}
+  }
+
+  /*FadeIn Animation*/
+
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
   }

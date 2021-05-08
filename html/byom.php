@@ -133,7 +133,7 @@
       <div class="modal-header" style="background-color: #607d8b;">
         <h4 class="modal-title" id="exampleModalLabel">File Check:</h4>
         <button type="button" class="close" onclick="close_modal();" aria-label="Close">
-          <span aria-hidden="true" style="color: #818181;">&times;</span>
+          <span aria-hidden="true" style="color: #4f4f4f;">&times;</span>
         </button>
       </div>
       <div class="modal-body">
@@ -198,8 +198,8 @@ function close_modal()
 
 //Add Self Build Script
 function add_sb() {
-  var variable1 = $('#first-label').val;
-  var variable2 = (document.getElementById('second-label')).value;
+  var variable1 = $('#first-label').text();
+  var variable2 = $('#second-label').text();
 
   var input1 = (document.getElementById("server_v")).value;
   var input2 = (document.getElementById("main_v")).value;
@@ -211,15 +211,25 @@ function add_sb() {
   var parant_html = document.getElementById("scriptbox");
       parant_html.innerHTML += "<div class='sb_inside_box'></div>";
 
-  task_html = $('#scriptbox').children('div')[sbs_count]
+  task_html = $('#scriptbox').children('div')[sbs_count];
   task_html.setAttribute('id', sbs_latest_id);
 
-  ($('#' + sbs_latest_id)).addClass('slide_animation')
+  ($('#' + sbs_latest_id)).addClass('slide_animation');
   window.setTimeout(function()  {
-    ($('#' + sbs_latest_id)).removeClass('slide_animation')   
+    ($('#' + sbs_latest_id)).removeClass('slide_animation');
+    ($('#' + sbs_latest_id)).css('overflow-x','auto');
   }, 1000);
 
-  alert(variable1);
+  document.getElementById(sbs_latest_id).innerHTML = "<p class='fade-in-text' style='padding-top:1%;color:black;margin-left:1%;'>" + variable1 + ' ' + '=' +  ' ' + input1 + "</p>";
+  //document.getElementById(sbs_latest_id).innerHTML += '<br>';
+  document.getElementById(sbs_latest_id).innerHTML += "<p class='fade-in-text' style='color:black;margin-left:1%;'>" + variable2 + " " + "=" +  " "  + input2 + "</p>";
+  
+  window.setTimeout(function()  {
+    var p = document.getElementById(sbs_latest_id);
+    p.children[0].removeAttribute('class');
+    p.children[1].removeAttribute('class');
+  }, 1000);
+
 
   //if (sbs_latest == 1) {
   //  task_html.style['top'] = base_top + '%';
