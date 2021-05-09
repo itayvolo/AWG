@@ -16,7 +16,7 @@ body {
     display: inline-block;
     position: relative;
     width: 34.3%;
-    height: 660px;
+    height: 700px;
     left: 7%;
     background: rgb(193, 189, 189);
     box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 10%);
@@ -33,43 +33,23 @@ body {
 
   .sb_inside_box  {
     width: 82%;
-    height: 85px;
+    /*height: 85px;*/
+    min-height: 85px;
+    max-height: 85px;
     margin-inline: 9%;
     margin-block: 3%;
     box-shadow: 0 4px 10px 0 rgb(0 0 0 / 80%), 0 4px 20px 0 rgb(0 0 0 / 80%);
-    transition: transform .8s ease-in-out;
+    transition: max-height .8s ease-out;
     border-radius: 5px;
-    overflow-x: hidden;
-    overflow-y: hidden;
-  }
-
-  .fade-in-text {
-    display: block;
-    /*font-family: Arial, Helvetica, sans-serif;*/
-    /*font-size: 100%;*/
-    color: black;
-    animation: fadeIn linear .8s;
-    -webkit-animation: fadeIn linear .8s;
-    -moz-animation: fadeIn linear .8s;
-    -o-animation: fadeIn linear .8s;
-    -ms-animation: fadeIn linear .8s;
-  }
-
-  .slide_animation  {
-    -moz-animation: slide .8s ease .0s forwards;
-    -webkit-animation: slide .8s ease .1s forwards;
-    -o-animation: slide .8s ease .1s forwards;
-    -ms-animation: slide .8s ease .1s forwards;
-     animation: slide .8s ease .1s forwards;
-     animation-fill-mode: both;
-     /*overflow: hidden;*/
+    overflow: hidden;
+    
   }
 
   .log-box {
     display: inline-block;
     position: relative;
     width: 34.3%;
-    height: 660px;
+    height: 700px;
     left: 11%;
     background: rgb(193, 189, 189);
     box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 10%);
@@ -79,21 +59,6 @@ body {
     border-radius: 2%;
   }
 
-  .log-gray-box {
-    /*width: fit-content;*/
-    padding: 50% 50%; /*330px 330px */
-    background: rgb(193, 189, 189);
-    position: absolute;
-    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 10%);
-    transition: left .48s;
-    opacity: 0.5;
-    /*width: 32%;*/
-    /*height: 70%;*/
-    /*left: 47%;*/
-    /*top: 16%;*/
-    /*bottom: 321px;*/
-  }
-  
   .my_footer  {
     display: block;
     position: relative;
@@ -119,8 +84,8 @@ body {
   }
   
   input {
-    border: none!important;
-    outline: none!important;
+    /*border: none!important;
+    outline: none!important;*/
     border-bottom:1px solid gray!important;
     transition: .1s!important;
     width: 100%;
@@ -139,6 +104,48 @@ body {
   .modal-open .modal{
     padding-right: 220px!important;
     padding-top: 18px;
+  }
+
+  .run_button {
+    position: relative;
+    display: block!important;
+    background-color: gray!important;
+    color: aquamarine!important;
+    width: 14%!important;
+    height: 60px!important;
+    left: 36.5%!important;
+    transition: left .48s!important;
+  }
+
+  .slide_animation  {
+    -moz-animation: slide .8s ease .0s forwards;
+    -webkit-animation: slide .8s ease .1s forwards;
+    -o-animation: slide .8s ease .1s forwards;
+    -ms-animation: slide .8s ease .1s forwards;
+     animation: slide .8s ease .1s forwards;
+     animation-fill-mode: both;
+     /*overflow: hidden;*/
+  }
+
+  .fade-in-text {
+    display: block;
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    /*font-size: 100%;*/
+    color: black;
+    animation: fadeIn linear .8s;
+    -webkit-animation: fadeIn linear .8s;
+    -moz-animation: fadeIn linear .8s;
+    -o-animation: fadeIn linear .8s;
+    -ms-animation: fadeIn linear .8s;
+  }
+
+  .minHeight_animation  {
+    -moz-animation: minHeight .8s ease-out;
+    -webkit-animation: minHeight .8s ease-out;
+    -o-animation: minHeight .8s ease-out;
+    -ms-animation: minHeight .8s ease-out;
+    animation: minHeight .8s ease-out;
+    transition: min-height .8s ease-out;
   }
 
   /*Slide Animation*/
@@ -198,3 +205,30 @@ body {
     0% {opacity:0;}
     100% {opacity:1;}
   }
+
+    /*Min-Height Animation*/
+
+    @keyframes minHeight {
+      from {min-height:85px;}
+      to {min-height:auto;}
+    }
+    
+    @-moz-keyframes minHeight {
+      from {min-height:85px;}
+      to {min-height:auto;}
+    }
+    
+    @-webkit-keyframes minHeight {
+      from {min-height:85px;}
+      to {min-height:auto;}
+    }
+    
+    @-o-keyframes minHeight {
+      from {min-height:85px;}
+      to {min-height:auto;}
+    }
+    
+    @-ms-keyframes minHeight {
+      from {min-height:85px;}
+      to {min-height:auto;}
+    }

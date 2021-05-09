@@ -87,7 +87,7 @@
     <button id="dropdown1" class="btn ripple-surface dropdown-btn active"><nobr>Self&nbsp;-&nbsp;Build<i id="caret1" class="fa fa-caret-up" style="right:-20%;"></i></nobr></button>
     <div id="dd-container1" class="dropdown-container" style="display: block;">
       <div class="right_a">
-        <nobr><button type="button" id="plus_sb1" class="plusim btn ripple-surface btn-circle btn-lg" onclick="open_modal('Service','Service Check','Save_SB1');">&plus;</button><span id="Service" class="script_title">Service Check</span><a id="info1" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
+        <nobr><button type="button" id="plus_sb1" class="plusim btn ripple-surface btn-circle btn-lg" onclick="open_modal('Services','Service Check','Save_SB1');">&plus;</button><span id="Service" class="script_title">Service Check</span><a id="info1" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
       </div>
       <hr>
       <div class="right_a">
@@ -140,7 +140,7 @@
         <form>
           <div class="form-outline mb-4">
             <input type="email" id="server_v" class="form-control" />
-            <label id="first-label" class="form-label">Server</label>
+            <label id="first-label" class="form-label">Servers</label>
           </div>
           <div class="form-outline mb-4">
             <input type="text" id="main_v" class="form-control" />
@@ -156,8 +156,9 @@
   </div>
 </div>
 
-  <br>
-  <br>
+<br>
+<button id="runbutton" class="run_button btn ripple-surface">Run Script</button>
+<br>
 
 <!-- Footer -->
   <footer class="text-center text-lg-start my_footer">
@@ -215,19 +216,29 @@ function add_sb() {
   task_html.setAttribute('id', sbs_latest_id);
 
   ($('#' + sbs_latest_id)).addClass('slide_animation');
+  //($('#' + sbs_latest_id)).css('height','85px');
   window.setTimeout(function()  {
     ($('#' + sbs_latest_id)).removeClass('slide_animation');
+    document.getElementById(sbs_latest_id).style['max-height'] = '200px';
+    //document.getElementById(sbs_latest_id).style['height'] = 'Auto';
     ($('#' + sbs_latest_id)).css('overflow-x','auto');
+    //document.getElementById(sbs_latest_id).className += ' ' + 'minHeight_animation';
+    //document.getElementById(sbs_latest_id).style.removeProperty('height');
+    //document.getElementById(sbs_latest_id).style['transition'] = 'min-height 1s ease';
   }, 1000);
 
-  document.getElementById(sbs_latest_id).innerHTML = "<p class='fade-in-text' style='padding-top:1%;color:black;margin-left:1%;'>" + variable1 + ' ' + '=' +  ' ' + input1 + "</p>";
-  //document.getElementById(sbs_latest_id).innerHTML += '<br>';
-  document.getElementById(sbs_latest_id).innerHTML += "<p class='fade-in-text' style='color:black;margin-left:1%;'>" + variable2 + " " + "=" +  " "  + input2 + "</p>";
+  window.setTimeout(function()  {
+    document.getElementById(sbs_latest_id).innerHTML = "<h5 class='fade-in-text' style='padding-top:1%;color:black;margin-left:1%;'>" + variable1 + ' ' + '-->' + "</h5>" + "<p class='fade-in-text' style='margin-left:1%;'>" + ' ' + input1 + "</p>";
+    //document.getElementById(sbs_latest_id).innerHTML += '<br>';
+    document.getElementById(sbs_latest_id).innerHTML += "<h5 class='fade-in-text' style='color:black;margin-left:1%;'>" + variable2 + ' ' + "-->" + "</h5>" + "<p class='fade-in-text' style='margin-left:1%;'>" + ' ' + input2 + "</p>";
+  }, 500);
   
   window.setTimeout(function()  {
     var p = document.getElementById(sbs_latest_id);
     p.children[0].removeAttribute('class');
     p.children[1].removeAttribute('class');
+    p.children[2].removeAttribute('class');
+    p.children[3].removeAttribute('class');
   }, 1000);
 
 
@@ -268,6 +279,7 @@ function right_open() {
   document.getElementById("scriptbox").style.left = "7%";
   document.getElementById("logbox").style.left = "11%";
   document.getElementById("copyrights").style.left = "35.5%";
+  document.getElementById("runbutton").style.left = "37%";
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
@@ -279,7 +291,7 @@ function right_close() {
   document.getElementById("scriptbox").style.left = "12%";
   document.getElementById("logbox").style.left = "16%";
   document.getElementById("copyrights").style.left = "40.5%";
-
+  document.getElementById("runbutton").style.left = "42%";
 }
 
 $(document).ready(function(){
