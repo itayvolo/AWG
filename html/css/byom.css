@@ -19,7 +19,7 @@ body {
     height: 700px;
     left: 7%;
     background: rgb(193, 189, 189);
-    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 70%), 0 4px 20px 0 rgb(0 0 0 / 80%);
     transition: left .48s;
     opacity: 0.5;
     overflow-y: auto;
@@ -52,7 +52,7 @@ body {
     height: 700px;
     left: 11%;
     background: rgb(193, 189, 189);
-    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 70%), 0 4px 20px 0 rgb(0 0 0 / 80%);
     transition: left .48s;
     opacity: 0.5;
     overflow-y: auto;
@@ -113,8 +113,12 @@ body {
     color: aquamarine!important;
     width: 14%!important;
     height: 60px!important;
-    left: 36.5%!important;
+    left: 36.4%;
+    font-size: 100%!important;
+    font-weight: bolder!important;
     transition: left .48s!important;
+    border-radius: 50px!important;
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 30%), 0 4px 20px 0 rgb(0 0 0 / 60%)!important;
   }
 
   .slide_animation  {

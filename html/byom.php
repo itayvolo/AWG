@@ -157,7 +157,8 @@
 </div>
 
 <br>
-<button id="runbutton" class="run_button btn ripple-surface">Run Script</button>
+<br>
+<button id="runbutton" class="run_button btn ripple-surface" onclick="save_sbs()">Run Script</button><!--onclick="Save_Current_SBS()"-->
 <br>
 
 <!-- Footer -->
@@ -228,18 +229,20 @@ function add_sb() {
   }, 1000);
 
   window.setTimeout(function()  {
-    document.getElementById(sbs_latest_id).innerHTML = "<h5 class='fade-in-text' style='padding-top:1%;color:black;margin-left:1%;'>" + variable1 + ' ' + '-->' + "</h5>" + "<p class='fade-in-text' style='margin-left:1%;'>" + ' ' + input1 + "</p>";
+    document.getElementById(sbs_latest_id).innerHTML = "<h5 class='fade-in-text' style='padding-top:1%;color:black;margin-left:1%;display:inline-block;'>" + variable1 + "</h5>" + ' ' + "<h6 class='fade-in-text' style='display:inline-block;color:black;'>" + '-->' + "</h6>" + "<p class='fade-in-text' style='margin-left:1%;'>" + ' ' + input1 + "</p>";
     //document.getElementById(sbs_latest_id).innerHTML += '<br>';
-    document.getElementById(sbs_latest_id).innerHTML += "<h5 class='fade-in-text' style='color:black;margin-left:1%;'>" + variable2 + ' ' + "-->" + "</h5>" + "<p class='fade-in-text' style='margin-left:1%;'>" + ' ' + input2 + "</p>";
+    document.getElementById(sbs_latest_id).innerHTML += "<h5 class='fade-in-text' style='color:black;margin-left:1%;display:inline-block;'>" + variable2  + "</h5>" + ' ' + "<h6 class='fade-in-text' style='display:inline-block;color:black;'>" + '-->' + "</h6>" + "<p class='fade-in-text' style='margin-left:1%;'>" + ' ' + input2 + "</p>";
   }, 500);
   
   window.setTimeout(function()  {
-    var p = document.getElementById(sbs_latest_id);
-    p.children[0].removeAttribute('class');
-    p.children[1].removeAttribute('class');
-    p.children[2].removeAttribute('class');
-    p.children[3].removeAttribute('class');
-  }, 1000);
+    var sb = document.getElementById(sbs_latest_id);
+    sb.children[0].removeAttribute('class');
+    sb.children[1].removeAttribute('class');
+    sb.children[2].removeAttribute('class');
+    sb.children[3].removeAttribute('class');
+    sb.children[4].removeAttribute('class');
+    sb.children[5].removeAttribute('class');
+  }, 2500);
 
 
   //if (sbs_latest == 1) {
@@ -251,7 +254,33 @@ function add_sb() {
   //  latest_top = latest_top.replace('%', ""); //DONT FORGET TO FIX THIS!
   //  task_html.style['top'] = (Number(latest_top) + 15) + '%';
   //}
+}
 
+function save_sbs() {
+  var sbs_count = $('#scriptbox').children('div').length;
+  if (sbs_count == 0) {
+    console.log('There are 0 scripts in the list, Cant run an empty script..');
+  }
+
+  else  {
+    var taskN;
+    var main_variable = [];
+    var main_variable_values = [];
+    var servers = [];
+    for(taskN = 1; taskN <= sbs_count; taskN++)  {
+      var current_task = $('#task_' + taskN);
+      servers.push(current_task.children('p')[0].innerText);
+      servers[taskN-1] = servers[taskN-1].replaceAll(' ',', ');
+      main_variable.push(current_task.children('h5')[1].innerText);
+      if (main_variable[taskN-1].includes('Services') == true); {
+        main_variable_values.push(current_task.children('p')[1].innerText);
+        main_variable_values[main_variable_values.length -1] = main_variable_values[(main_variable_values.length) -1].replaceAll(' ',', ');
+      }
+      console.log(servers[taskN - 1]); 
+      console.log(main_variable_values[main_variable_values.length -1]);
+
+    }
+  }
 }
 
   //LeftSideNav
@@ -279,7 +308,7 @@ function right_open() {
   document.getElementById("scriptbox").style.left = "7%";
   document.getElementById("logbox").style.left = "11%";
   document.getElementById("copyrights").style.left = "35.5%";
-  document.getElementById("runbutton").style.left = "37%";
+  document.getElementById("runbutton").style.left = "36.4%";
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
@@ -291,7 +320,7 @@ function right_close() {
   document.getElementById("scriptbox").style.left = "12%";
   document.getElementById("logbox").style.left = "16%";
   document.getElementById("copyrights").style.left = "40.5%";
-  document.getElementById("runbutton").style.left = "42%";
+  document.getElementById("runbutton").style.left = "41.4%";
 }
 
 $(document).ready(function(){
