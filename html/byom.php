@@ -158,7 +158,7 @@
 
 <br>
 <br>
-<button id="runbutton" class="run_button btn ripple-surface" onclick="save_sbs()">Run Script</button><!--onclick="Save_Current_SBS()"-->
+<button id="runbutton" class="run_button btn ripple-surface" onclick="Save_Current_SBS()">Run Script</button><!--onclick="Save_Current_SBS()"-->
 <br>
 
 <!-- Footer -->
@@ -236,13 +236,8 @@ function add_sb() {
   
   window.setTimeout(function()  {
     var sb = document.getElementById(sbs_latest_id);
-    sb.children[0].removeAttribute('class');
-    sb.children[1].removeAttribute('class');
-    sb.children[2].removeAttribute('class');
-    sb.children[3].removeAttribute('class');
-    sb.children[4].removeAttribute('class');
-    sb.children[5].removeAttribute('class');
-  }, 2500);
+    sb.children['select-all'].removeAttribute('class');
+  }, 1500);
 
 
   //if (sbs_latest == 1) {
@@ -264,22 +259,33 @@ function save_sbs() {
 
   else  {
     var taskN;
-    var main_variable = [];
-    var main_variable_values = [];
-    var servers = [];
+    var main_variable;
+    var main_values;
+    var servers;
+    var sb_object = {};
+    var object_arr = [];
+
     for(taskN = 1; taskN <= sbs_count; taskN++)  {
       var current_task = $('#task_' + taskN);
-      servers.push(current_task.children('p')[0].innerText);
-      servers[taskN-1] = servers[taskN-1].replaceAll(' ',', ');
-      main_variable.push(current_task.children('h5')[1].innerText);
-      if (main_variable[taskN-1].includes('Services') == true); {
-        main_variable_values.push(current_task.children('p')[1].innerText);
-        main_variable_values[main_variable_values.length -1] = main_variable_values[(main_variable_values.length) -1].replaceAll(' ',', ');
-      }
-      console.log(servers[taskN - 1]); 
-      console.log(main_variable_values[main_variable_values.length -1]);
+      servers = current_task.children('p')[0].innerText.replaceAll(' ',',');
+      main_variable = current_task.children('h5')[1].innerText;
 
+      if (main_variable.includes('Services') == true) {
+        main_values = current_task.children('p')[1].innerText.replaceAll(' ',',');
+      }
+      else {
+        main_values = current_task.children('p')[1].innerText;
+      }
+
+      //sb_object = new Object;
+
+      sb_object = {srvs: servers, mvar: main_variable, mval: main_values};
+
+      object_arr.push(sb_object);
+
+      console.log(object_arr[taskN-1]); 
     }
+    return object_arr;
   }
 }
 
