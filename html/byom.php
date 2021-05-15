@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>AWG</title>
+  <title>Automatic War Games</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--<meta http-equiv="x-ua-compatible" content="ie=edge"/>-->
@@ -34,7 +34,7 @@
 </header>
 <div id="main" style="width:85%; transition:0.5s;">
   <button id="arrow" class="btn ripple-surface" onclick="right_close();"><i class="fas fa-angle-double-right"></i></button>
-  <h1 id="main-title" class="text-center align-middle" style="position: relative;top: 4%;left: 32.5%;display: inline-block;transition: left .5s;">Automatic War Games</h1>
+  <h1 id="main-title" class="text-center align-middle" style="position: relative;top: 4%;left: 33.5%;display: inline-block;transition: left .5s;">Automatic War Games</h1>
 </div>
 <br>
 <!-- Left Side Navigation -->
@@ -42,7 +42,7 @@
   <div class="topsidenav" id="topSidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="left_close()">&times;</a>
       <div>
-          <h1 style="color:#eee;font-weight: bold;position: absolute;left: 35%;font-size: 55px;top: 20%;">Menu</h1>
+          <h1 style="color:#eee;font-weight: bold;position: absolute;left: 30%;font-size: 55px;top: 20%;">Menu</h1>
       </div>
     <hr style="
       color: white;
@@ -115,6 +115,21 @@
     </div>
   </div>
 </div>
+
+<!-- Masham Name -->
+<div class="ccontainer">  
+  <form>
+    
+    <div id="group" class="group">      
+      <input type="text" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label style="left:30%;">Masham Name</label>
+    </div>
+    
+  </form>
+</div>
+
 <!--Script-Box-->
 <div id="scriptbox" class="script-box">
   <!--<div id="scriptgraybox" class="script-gray-box"></div>-->
@@ -136,18 +151,35 @@
           <span aria-hidden="true" style="color: #4f4f4f;">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body ccontainer">
         <form>
-          <div class="form-outline mb-4">
-            <input type="email" id="server_v" class="form-control" />
-            <label id="first-label" class="form-label">Servers</label>
+          <div id="group" class="group" style="left:1%;">      
+            <input type="text" id="server_v" style="width:400px!important;" required>
+            <span class="highlight"></span>
+            <span class="bar" style="width:400px!important;"></span>
+            <label id="first-label" style="left:2%;">Servers</label>
           </div>
-          <div class="form-outline mb-4">
-            <input type="text" id="main_v" class="form-control" />
-            <label id="second-label" class="form-label">Script Main Variable</label>
+          <br>
+          <br>
+          <div id="group" class="group" style="left:1%;">      
+            <input type="text" id="main_v" style="width:400px!important;" required>
+            <span class="highlight"></span>
+            <span class="bar" style="width:400px!important;"></span>
+            <label id="second-label" style="left:2%;">Script Main Variable</label>
           </div>
         </form>
       </div>
+        <!--<form>-->
+        <!--  <div class="form-outline mb-4">-->
+        <!--    <input type="email" id="server_v" class="form-control" />-->
+        <!--    <label id="first-label" class="form-label">Servers</label>-->
+        <!--  </div>-->
+        <!--  <div class="form-outline mb-4">-->
+        <!--    <input type="text" id="main_v" class="form-control" />-->
+        <!--    <label id="second-label" class="form-label">Script Main Variable</label>-->
+        <!--  </div>-->
+        <!--</form>-->
+      <!--</div>-->
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" onclick="close_modal()" style="background-color:#818181;">Dismiss</button>
         <button id="run" type="button" class="btn btn-primary" style="background-color: #607D99;" onclick="add_sb(),close_modal()">Add Script</button><!--onclick="Save_SB1()"-->
@@ -236,7 +268,12 @@ function add_sb() {
   
   window.setTimeout(function()  {
     var sb = document.getElementById(sbs_latest_id);
-    sb.children['select-all'].removeAttribute('class');
+    sb.children[0].removeAttribute('class');
+    sb.children[1].removeAttribute('class');
+    sb.children[2].removeAttribute('class');
+    sb.children[3].removeAttribute('class');
+    sb.children[4].removeAttribute('class');
+    sb.children[5].removeAttribute('class');
   }, 1500);
 
 
@@ -293,7 +330,7 @@ function save_sbs() {
   
 function left_open() {
   event.stopPropagation();
-  document.getElementById("LeftSidebar").style.width = "28%";
+  document.getElementById("LeftSidebar").style.width = "23%";
   //x.style.width = "35%";
   //x.style.fontSize = "40px";
   //x.style.paddingTop = "10%";
@@ -315,6 +352,7 @@ function right_open() {
   document.getElementById("logbox").style.left = "11%";
   document.getElementById("copyrights").style.left = "35.5%";
   document.getElementById("runbutton").style.left = "36.4%";
+  document.getElementById("group").style.left = "35%";
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
@@ -327,6 +365,7 @@ function right_close() {
   document.getElementById("logbox").style.left = "16%";
   document.getElementById("copyrights").style.left = "40.5%";
   document.getElementById("runbutton").style.left = "41.4%";
+  document.getElementById("group").style.left = "40%";
 }
 
 $(document).ready(function(){

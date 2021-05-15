@@ -31,13 +31,18 @@ function Save_Current_SBS()  {
         object_arr.push(sb_object);
   
         console.log(object_arr[taskN-1]);
+
+        var a = object_arr[taskN-1].srvs;
+        var b = object_arr[taskN-1].mvar;
+        var c = object_arr[taskN-1].mval;
+
         $.post("assets/includes/get-functions/Save_Current_SBS.php",    {
-            'servers': object_arr[taskN-1].srvs,
-            'mvariable': object_arr[taskN-1].mvar,
-            'mvalue': object_arr[taskN-1].mval},  
+            'servers': a,
+            'mvariable': b,
+            'mvalue': c},  
             function (data)  {
                 if (data.length == 0)   {
-                    $('#exampleModal').modal('hide');
+                    console.log("success!!!!");
                     //location.reload();
                 }
                 else {

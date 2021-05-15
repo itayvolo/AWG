@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" style="scroll-behavior: smooth;">
 <head>
-  <title>AWG</title>
+  <title>Automatic War Games</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/w3.css">
@@ -56,7 +56,7 @@
 <header class="w3-container w3-padding w3-theme-blue-grey" id="myHeader">
   <button class="w3-btn w3-hover-light-grey" style="font-size:40px;cursor:pointer;box-shadow:0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 10%);transition:.3s;" onclick="w3_open()">&#9776;</button> 
   <div class="w3-center">
-  <h4 class="w3-animate-top" style="font-weight: bold;">Automatic War Game</h4>
+  <h4 class="w3-animate-top" style="font-weight: bold;">Automatic War Games</h4>
   <h1 class="w3-xxxlarge w3-animate-top">Build Your Own Masham</h1>
     <div class="w3-padding-32">
       <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey w3-animate-opacity" onclick="document.getElementById('id01').style.display='block'" style="font-weight:900; box-shadow:0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 10%);transition: .5s;">Go Fuck Yourself</button>
