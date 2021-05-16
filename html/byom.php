@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/byom.css">
   <link rel="stylesheet" href="css/bootstrap-4.0/bootstrap.css">
   <link rel="stylesheet" href="css/mdb.min.css">
+  <link rel="stylesheet" href="css/toastr.min.css">
   <!-- Google Fonts Roboto -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"/>
   <!--<script defer src="js/all.js"></script>-->
@@ -22,6 +23,7 @@
   <script src="js/jquery-3.5.1.min.js"></script>
   <script src="js/bootstrap-4.0/bootstrap.min.js"></script>
   <script src="assets/includes/post-functions.js"></script>
+  <script src="js/toastr.min.js"></script>
 </head>
 <body class="body" onclick="left_close()">
   <video autoplay muted loop id="myVideo">
@@ -121,7 +123,7 @@
   <form>
     
     <div id="group" class="group">      
-      <input type="text" required>
+      <input type="text" id="mashamName" required>
       <span class="highlight"></span>
       <span class="bar"></span>
       <label style="left:30%;">Masham Name</label>
@@ -190,7 +192,7 @@
 
 <br>
 <br>
-<button id="runbutton" class="run_button btn ripple-surface" onclick="Save_Current_SBS()">Run Script</button><!--onclick="Save_Current_SBS()"-->
+<button id="runbutton" class="run_button btn ripple-surface" onclick="Save_Current_SBS()">Save & Run</button><!--onclick="Save_Current_SBS()"-->
 <br>
 
 <!-- Footer -->
@@ -261,69 +263,76 @@ function add_sb() {
   }, 1000);
 
   window.setTimeout(function()  {
-    document.getElementById(sbs_latest_id).innerHTML = "<h5 class='fade-in-text' style='padding-top:1%;color:black;margin-left:1%;display:inline-block;'>" + variable1 + "</h5>" + ' ' + "<h6 class='fade-in-text' style='display:inline-block;color:black;'>" + '-->' + "</h6>" + "<p class='fade-in-text' style='margin-left:1%;'>" + ' ' + input1 + "</p>";
+    document.getElementById(sbs_latest_id).innerHTML = "<h5 class='fade-in-text' style='padding-top:1%;color:black;margin-left:1%;display:inline-block;'>" + variable1 + "</h5>" + 
+    "<button type='button' id=" + sbs_latest + ' ' + "class='fade-in-removebtn ixim btn ripple-surface btn-circle btn-lg' id='plus_sb2' onclick=" + 
+    "rotation(" + "'" + sbs_latest + "a" + "')" + ',' + "remove_sb(" + "'" + sbs_latest + "')><p id=" + sbs_latest + "a" + ' ' + "style='margin:0px 0px 0px 0px;transition:.5s;padding-bottom:5%;'>x</p></button>" + 
+    ' ' + "<h6 class='fade-in-text' style='display:inline-block;color:black;'>" + '-->' + "</h6>" + "<p class='fade-in-text' style='margin-left:1%;'>" + ' ' + input1 + "</p>";
+
     //document.getElementById(sbs_latest_id).innerHTML += '<br>';
     document.getElementById(sbs_latest_id).innerHTML += "<h5 class='fade-in-text' style='color:black;margin-left:1%;display:inline-block;'>" + variable2  + "</h5>" + ' ' + "<h6 class='fade-in-text' style='display:inline-block;color:black;'>" + '-->' + "</h6>" + "<p class='fade-in-text' style='margin-left:1%;'>" + ' ' + input2 + "</p>";
   }, 500);
   
   window.setTimeout(function()  {
     var sb = document.getElementById(sbs_latest_id);
+    ($('#' + sbs_latest)).removeClass('fade-in-removebtn');
     sb.children[0].removeAttribute('class');
-    sb.children[1].removeAttribute('class');
     sb.children[2].removeAttribute('class');
     sb.children[3].removeAttribute('class');
     sb.children[4].removeAttribute('class');
     sb.children[5].removeAttribute('class');
+    sb.children[6].removeAttribute('class');
   }, 1500);
 
-
-  //if (sbs_latest == 1) {
-  //  task_html.style['top'] = base_top + '%';
-  //}
-  //
-  //else  {
-  //  var latest_top = ($('#scriptbox').children('div')[sbs_count -1]).style['top'];
-  //  latest_top = latest_top.replace('%', ""); //DONT FORGET TO FIX THIS!
-  //  task_html.style['top'] = (Number(latest_top) + 15) + '%';
-  //}
+  var sbs_latest_count = $('#scriptbox').children('div').length;
+  if (sbs_latest_count == sbs_count+1)  {
+    toastr.success('Job added successfully!');
+  }
+  else  {
+    toastr.warning('Failed to add job to list')
+  }
 }
 
-function save_sbs() {
-  var sbs_count = $('#scriptbox').children('div').length;
-  if (sbs_count == 0) {
-    console.log('There are 0 scripts in the list, Cant run an empty script..');
-  }
+//function save_sbs() {
+//  var sbs_count = $('#scriptbox').children('div').length;
+//  if (sbs_count == 0) {
+//    console.log('There are 0 scripts in the list, Cant run an empty script..');
+//  }
+//
+//  else  {
+//    var taskN;
+//    var main_variable;
+//    var main_values;
+//    var servers;
+//    var sb_object = {};
+//    var object_arr = [];
+//
+//    for(taskN = 1; taskN <= sbs_count; taskN++)  {
+//      var current_task = $('#task_' + taskN);
+//      servers = current_task.children('p')[0].innerText.replaceAll(' ',',');
+//      main_variable = current_task.children('h5')[1].innerText;
+//
+//      if (main_variable.includes('Services') == true) {
+//        main_values = current_task.children('p')[1].innerText.replaceAll(' ',',');
+//      }
+//      else {
+//        main_values = current_task.children('p')[1].innerText;
+//      }
+//
+//      //sb_object = new Object;
+//
+//      sb_object = {srvs: servers, mvar: main_variable, mval: main_values};
+//
+//      object_arr.push(sb_object);
+//
+//      console.log(object_arr[taskN-1]); 
+//    }
+//    return object_arr;
+//  }
+//}
 
-  else  {
-    var taskN;
-    var main_variable;
-    var main_values;
-    var servers;
-    var sb_object = {};
-    var object_arr = [];
+function remove_sb(aa)  {
+  ($('#task_' + aa)).remove();
 
-    for(taskN = 1; taskN <= sbs_count; taskN++)  {
-      var current_task = $('#task_' + taskN);
-      servers = current_task.children('p')[0].innerText.replaceAll(' ',',');
-      main_variable = current_task.children('h5')[1].innerText;
-
-      if (main_variable.includes('Services') == true) {
-        main_values = current_task.children('p')[1].innerText.replaceAll(' ',',');
-      }
-      else {
-        main_values = current_task.children('p')[1].innerText;
-      }
-
-      //sb_object = new Object;
-
-      sb_object = {srvs: servers, mvar: main_variable, mval: main_values};
-
-      object_arr.push(sb_object);
-
-      console.log(object_arr[taskN-1]); 
-    }
-    return object_arr;
-  }
 }
 
   //LeftSideNav
@@ -408,45 +417,73 @@ $(document).ready(function(){
 
 //Plus Rotation
 
-$(document).ready(function(){
-  $("#plus_sb1").click(function(){
-    $("#plus_sb1").toggleClass("rtoate180");
-  });
-});
-
-$(document).ready(function(){
-  $("#plus_sb2").click(function(){
-    $("#plus_sb2").toggleClass("rtoate180");
-  });
-});
-
-$(document).ready(function(){
-  $("#plus_sb3").click(function(){
-    $("#plus_sb3").toggleClass("rtoate180");
-  });
-});
-
-$(document).ready(function(){
-  $("#plus_fm1").click(function(){
-    $("#plus_fm1").toggleClass("rtoate180");
-  });
-});
+//$(document).ready(function(){
+//  $("#plus_sb1").click(function(){
+//    $("#plus_sb1").toggleClass("rtoate180");
+//  });
+//});
+//
+//$(document).ready(function(){
+//  $("#plus_sb2").click(function(){
+//    $("#plus_sb2").toggleClass("rtoate180");
+//  });
+//});
+//
+//$(document).ready(function(){
+//  $("#plus_sb3").click(function(){
+//    $("#plus_sb3").toggleClass("rtoate180");
+//  });
+//});
+//
+//$(document).ready(function(){
+//  $("#plus_fm1").click(function(){
+//    $("#plus_fm1").toggleClass("rtoate180");
+//  });
+//});
 
 //$(document).ready(function(){
 //  $("#plus_fm2").click(function(){
 //    $("#plus_fm2").toggleClass("rtoate180");
 //  });
 //});
+//
+//$(document).ready(function(){
+//  $("#plus_fm3").click(function(){
+//    $("#plus_fm3").toggleClass("rtoate180");
+//  });
+//});
 
-$(document).ready(function(){
-  $("#plus_fm3").click(function(){
-    $("#plus_fm3").toggleClass("rtoate180");
-  });
-});
-
-function rotation(){
-  document.getElementById("plus_fm2").toggleClass = "rotate180";
+function rotation(aa) {
+  ($('#' + aa)).toggleClass("rtoate180");
 }
+
+window.onbeforeunload = function() {
+  return "Data will be lost if you leave the page, are you sure?";
+};
+
+//TOASTR - ALERT MESSAGES
+
+// Set the options that I want
+toastr.options = {
+  "closeButton": true,
+  "debug": false,
+  "newestOnTop": true,
+  "progressBar": true,
+  "positionClass": "toast-top-right",
+  "preventDuplicates": true,
+  "onclick": null,
+  "showDuration": "200",
+  "hideDuration": "1000",
+  "timeOut": "4000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "slideDown",
+  "hideMethod": "fadeOut"
+}
+
+//TOASTR Functions
+
 
 </script>
 </body>

@@ -1,11 +1,17 @@
 function Save_Current_SBS()  {
     var sbs_count = $('#scriptbox').children('div').length;
+    var mname = document.getElementById('mashamName').value;
+    console.log(mashamName);
     if (sbs_count == 0) {
-      console.log('There are 0 scripts in the list, Cant run an empty script..');
+      toastr.error('There are no jobs in the script-box..');
+    }
+    else if (mname.length == 0)  {
+      toastr.error("'MashamName' is null, Enter a name for your masham");
     }
   
     else  {
       var taskN;
+      var mashamName = document.getElementById('mashamName').value;
       var main_variable = [];
       var main_values = [];
       var servers = [];
@@ -32,21 +38,19 @@ function Save_Current_SBS()  {
   
         console.log(object_arr[taskN-1]);
 
-        var a = object_arr[taskN-1].srvs;
-        var b = object_arr[taskN-1].mvar;
-        var c = object_arr[taskN-1].mval;
 
         $.post("assets/includes/get-functions/Save_Current_SBS.php",    {
-            'servers': a,
-            'mvariable': b,
-            'mvalue': c},  
+            'mashamName': mashamName,
+            'servers': object_arr[taskN-1].srvs,
+            'mvariable': object_arr[taskN-1].mvar,
+            'mvalue': object_arr[taskN-1].mval},  
             function (data)  {
                 if (data.length == 0)   {
-                    console.log("success!!!!");
+                    alert("success!!!!");
                     //location.reload();
                 }
                 else {
-                    alert(data);
+                    toastr.error(data);
                 }
         }   );
       }

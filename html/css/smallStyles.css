@@ -4,6 +4,7 @@
     position: relative;
     right: 50%;
     height: 575px;
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 70%), 0 4px 20px 0 rgb(0 0 0 / 80%);
 }
 .mySlides .w3-display-container {
     width: 80%;
@@ -84,6 +85,26 @@
     position: relative!important;
     color: #15a1ff!important;
     font-size: 145%!important;
+    transition: all .2s ease-in-out;
+  }
+
+  .ixim {
+    margin-top: 5%;
+    position: absolute!important;
+    color: black!important;
+    background-color: #607d8b!important;
+    left: 87%;
+    /*top: 10%;*/
+    width: 7.5%;
+    height: 5.5%;
+    font-size: 130%!important;
+    box-shadow:0 4px 10px 0 rgb(0 0 0 / 80%), 0 4px 20px 0 rgb(0 0 0 / 80%)!important;
+    transition: .4s;
+  }
+
+  .ixim:hover  {
+    color: #15a1ff!important;
+    /*font-size: 145%!important;*/
     transition: all .2s ease-in-out;
   }
 

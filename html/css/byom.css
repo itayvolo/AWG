@@ -143,6 +143,15 @@ body {
     -ms-animation: fadeIn linear .8s;
   }
 
+  .fade-in-removebtn  {
+    /*animation-delay: 4s!important;*/
+    animation: fadeIn linear .8s;
+    -webkit-animation: fadeIn linear .8s;
+    -moz-animation: fadeIn linear .8s;
+    -o-animation: fadeIn linear .8s;
+    -ms-animation: fadeIn linear .8s;
+  }
+
   .minHeight_animation  {
     -moz-animation: minHeight .8s ease-out;
     -webkit-animation: minHeight .8s ease-out;

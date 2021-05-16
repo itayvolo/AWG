@@ -1,7 +1,7 @@
 <?php
 
 include '../config.php';
-$mashamName = "test1";  //$_POST["mashamName"];
+$mashamName = $_POST["mashamName"];  //$_POST["mashamName"];
 $servers = $_POST["servers"];
 $mvariable = $_POST["mvariable"];
 $mvalue = $_POST["mvalue"];
@@ -24,8 +24,8 @@ else{
 }
 
 //db_conn
-if(strlen($servers) == 0 || strlen($mvalue) == 0)   {
-    echo "Error, Cant continue with empty input..";
+if(strlen($servers) == 0 || strlen($mvalue) == 0 || strlen($mashamName) == 0)   {
+    echo "Error, Cant continue with empty inputs..";
 }
 else    {
     //echo "trying to insert";
