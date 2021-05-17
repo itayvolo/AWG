@@ -234,6 +234,7 @@ function close_modal()
 
 //Add Self Build Script
 function add_sb() {
+  var task_nums = []
   var variable1 = $('#first-label').text();
   var variable2 = $('#second-label').text();
 
@@ -241,13 +242,30 @@ function add_sb() {
   var input2 = (document.getElementById("main_v")).value;
 
   var base_top = 10;
-  var sbs_count = $('#scriptbox').children('div').length;
-  var sbs_latest = sbs_count + 1;
-  var sbs_latest_id = "task_" + (sbs_latest);
+  var sbs = $('#scriptbox').children('div').length;
+  if (sbs == 0) {
+    sbs_count = 1;
+  }
+  else  {
+    for(var w=0; w<sbs; w++)  {
+      ($('#scriptbox').children('div')[w]).setAttribute('id', "task_" + (w+1));
+      t = document.getElementById('task_' + (w+1));
+      t.children[1].setAttribute('id', (w+1));
+      t.children[1].setAttribute('onclick', ("rotation(" + "'" + (w+1) + "a" + "')" + ',' + "remove_sb(" + "'" + (w+1) + "')"));
+      ($('#' + (w+1))).removeClass('fade-in-removebtn');
+      //($('#task_' + (w+1)).children('button')).setAttribute('id', (w+1));
+      //var sbs_number = sbs_name.replace(/[^0-9]/g,'')
+      //task_nums.push(sbs_number);
+      //who_bigger = Math.max(...task_nums);
+    }
+    sbs_count = sbs + 1;
+  }
+  //var sbs_latest = sbs_count + 1;
+  var sbs_latest_id = "task_" + (sbs_count);
   var parant_html = document.getElementById("scriptbox");
       parant_html.innerHTML += "<div class='sb_inside_box'></div>";
 
-  task_html = $('#scriptbox').children('div')[sbs_count];
+  task_html = $('#scriptbox').children('div')[sbs];
   task_html.setAttribute('id', sbs_latest_id);
 
   ($('#' + sbs_latest_id)).addClass('slide_animation');
@@ -264,8 +282,8 @@ function add_sb() {
 
   window.setTimeout(function()  {
     document.getElementById(sbs_latest_id).innerHTML = "<h5 class='fade-in-text' style='padding-top:1%;color:black;margin-left:1%;display:inline-block;'>" + variable1 + "</h5>" + 
-    "<button type='button' id=" + sbs_latest + ' ' + "class='fade-in-removebtn ixim btn ripple-surface btn-circle btn-lg' id='plus_sb2' onclick=" + 
-    "rotation(" + "'" + sbs_latest + "a" + "')" + ',' + "remove_sb(" + "'" + sbs_latest + "')><p id=" + sbs_latest + "a" + ' ' + "style='margin:0px 0px 0px 0px;transition:.5s;padding-bottom:5%;'>x</p></button>" + 
+    "<button type='button' id=" + sbs_count + ' ' + "class='fade-in-removebtn ixim btn ripple-surface btn-circle btn-lg' id='plus_sb2' onclick=" + 
+    "rotation(" + "'" + sbs_count + "a" + "')" + ',' + "remove_sb(" + "'" + sbs_count + "')><p id=" + sbs_count + "a" + ' ' + "style='margin:0px 0px 0px 0px;transition:.5s;padding-bottom:5%;'>x</p></button>" + 
     ' ' + "<h6 class='fade-in-text' style='display:inline-block;color:black;'>" + '-->' + "</h6>" + "<p class='fade-in-text' style='margin-left:1%;'>" + ' ' + input1 + "</p>";
 
     //document.getElementById(sbs_latest_id).innerHTML += '<br>';
@@ -274,7 +292,6 @@ function add_sb() {
   
   window.setTimeout(function()  {
     var sb = document.getElementById(sbs_latest_id);
-    ($('#' + sbs_latest)).removeClass('fade-in-removebtn');
     sb.children[0].removeAttribute('class');
     sb.children[2].removeAttribute('class');
     sb.children[3].removeAttribute('class');
@@ -284,11 +301,11 @@ function add_sb() {
   }, 1500);
 
   var sbs_latest_count = $('#scriptbox').children('div').length;
-  if (sbs_latest_count == sbs_count+1)  {
+  if (sbs_latest_count == sbs_count)  {
     toastr.success('Job added successfully!');
   }
   else  {
-    toastr.warning('Failed to add job to list')
+    toastr.warning('Failed to add job to list');
   }
 }
 
@@ -332,7 +349,19 @@ function add_sb() {
 
 function remove_sb(aa)  {
   ($('#task_' + aa)).remove();
-
+  var sbs = $('#scriptbox').children('div').length;
+  if (sbs >= 1) {
+    for(var w=0; w<sbs; w++)  {
+        ($('#scriptbox').children('div')[w]).setAttribute('id', "task_" + (w+1));
+        t = document.getElementById('task_' + (w+1));
+        t.children[1].setAttribute('id', (w+1));
+        t.children[1].setAttribute('onclick', ("rotation(" + "'" + (w+1) + "a" + "')" + ',' + "remove_sb(" + "'" + (w+1) + "')"));
+        //($('#task_' + (w+1)).children('button')).setAttribute('id', (w+1));
+        //var sbs_number = sbs_name.replace(/[^0-9]/g,'');
+        //task_nums.push(sbs_number);
+        //who_bigger = Math.max(...task_nums);
+    }
+  }
 }
 
   //LeftSideNav
