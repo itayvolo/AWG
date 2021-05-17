@@ -1,0 +1,9 @@
+#!/bin/bash
+read -p 'Commit message: ' commsg
+rm -rf /home/itayvolo/awg/html/
+cp -R /var/www/html /home/itayvolo/awg/
+cd /home/itayvolo/awg/
+git add .
+git commit -m "$commsg"
+git push 
+
