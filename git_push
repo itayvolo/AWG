@@ -5,5 +5,5 @@ cp -R /var/www/html /home/itayvolo/awg/
 cd /home/itayvolo/awg/
 git add .
 git commit -m "$commsg"
-git push 
+git push && echo "Success"
 
