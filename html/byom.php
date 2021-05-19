@@ -64,7 +64,7 @@
     <br>
   <a class="btn ripple-surface" style="text-align: left;" href="#" >Masham&nbsp;List</a>
     <br>
-  <a class="btn ripple-surface" style="text-align: left;" href="#" >History</a>
+  <a class="btn ripple-surface" style="text-align: left;" href="history.php" >History</a>
     <br>
   <a class="btn ripple-surface" style="text-align: left;" href="#" >About</a>
 </div>

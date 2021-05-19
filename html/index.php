@@ -45,9 +45,9 @@
 
 <div class= topNavbar id="topNavbar">
   <a href="#myHeader">Home</a>
-  <a href="byom.html">Build Your Own Masham</a>
+  <a href="byom.php">Build Your Own Masham</a>
   <a href="#Mashamlist">Masham List</a>
-  <a href="#history">History</a>
+  <a href="history.php">History</a>
   <a href="#about">About</a>
 </div>
 

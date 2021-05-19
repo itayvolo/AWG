@@ -14,9 +14,14 @@ elseif(strpos($mvariable, 'File') !== false)    {
     $table = 'FileTasks';
     $columnVar = FilePath;
 }
-elseif(strpos($mvariable, 'Reboot') !== false)    {
-    $table = 'RebootTasks';
-    $columnVar = Timeout;
+elseif(strpos($mvariable, 'Timeout') !== false)    {
+    if (is_numeric($mvalue) !== false)  {
+        $table = 'RebootTasks';
+        $columnVar = Timeout;
+    }
+    else {
+        exit("Reboot Timeout variable must be a number..");
+    }
 }
 else{
     //echo $mvariable;

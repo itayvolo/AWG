@@ -54,6 +54,18 @@ function Save_Current_SBS()  {
                 }
         }   );
       }
+      $.post("assets/includes/get-functions/get_masham.php",    {
+        'task_object_array': object_array},
+        function (data)  {
+            if (data.length == 0)   {
+                alert("success!!!!");
+                //location.reload();
+            }
+            else {
+                toastr.error(data);
+            }
+        }
+      );
     }
     //console.log("sex appeal");
     //for(var i=0; i < object_arr.length; i++)  {
@@ -73,4 +85,18 @@ function Save_Current_SBS()  {
     //        }
     //    );
     //}   
+}
+
+function get_masham() {
+  $.post("assets/includes/get-functions/get_masham.php",    {
+    function (data)  {
+      if (data.length == 0)   {
+          alert("success!!!!");
+          //location.reload();
+      }
+      else {
+          toastr.error(data);
+      }
+    }
+  });
 }
