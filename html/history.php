@@ -84,19 +84,19 @@
     <td class="my_td">Jill</td>
     <td class="my_td">Smith</td>
     <td class="my_td">50</td>
-    <td class="my_td"><button></button></td>
+    <td class="my_td"><button type="button" class="plus_fullview btn ripple-surface btn-circle btn-lg">&plus;</button></td>
   </tr>
   <tr class="my_tr">
     <td class="my_td">Eve</td>
     <td class="my_td">Jackson</td>
     <td class="my_td">94</td>
-    <td class="my_td"><button></button></td>
+    <td class="my_td"><button type="button" class="plus_fullview btn ripple-surface btn-circle btn-lg">&plus;</button></td>
   </tr>
   <tr class="my_tr">
     <td class="my_td">John</td>
     <td class="my_td">Doe</td>
     <td class="my_td">80</td>
-    <td class="my_td"><button></button></td>
+    <td class="my_td"><button type="button" class="plus_fullview btn ripple-surface btn-circle btn-lg">&plus;</button></td>
   </tr>
 </table>
 

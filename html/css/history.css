@@ -34,6 +34,15 @@
     position: relative;
     background-color: lightgray!important;
 }
+.plus_fullview  {
+  position: relative!important;
+  color: #818181!important;
+  font-size: 145%!important;
+  display: inline-block!important;
+  padding: 10px 13px!important;
+  transform: none;
+  
+}
 
 .my_table  {
     position: relative;

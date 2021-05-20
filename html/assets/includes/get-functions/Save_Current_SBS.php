@@ -28,13 +28,13 @@ else{
     echo "Cant define 'table' Variable";
 }
 
-//db_conn
-if(strlen($servers) == 0 || strlen($mvalue) == 0 || strlen($mashamName) == 0)   {
-    echo "Error, Cant continue with empty inputs..";
-}
-else    {
-    //echo "trying to insert";
-    sqlsrv_query($conn, "INSERT INTO $table (MashamName, Servers, $columnVar) VALUES ('$mashamName', '$servers', '$mvalue')");
-}
+////db_conn
+//if(strlen($servers) == 0 || strlen($mvalue) == 0 || strlen($mashamName) == 0)   {
+//    echo "Error, Cant continue with empty inputs..";
+//}
+//else    {
+//    //echo "trying to insert";
+//    sqlsrv_query($conn, "INSERT INTO $table (MashamName, Servers, $columnVar) VALUES ('$mashamName', '$servers', '$mvalue')");
+//}
 
 ?>
