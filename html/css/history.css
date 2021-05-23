@@ -40,8 +40,11 @@
   font-size: 145%!important;
   display: inline-block!important;
   padding: 10px 13px!important;
-  transform: none;
-  
+  transform: none;  
+}
+.plus_fullview:hover {
+  color: #15a1ff!important;
+  transition: all .5s ease-in-out;
 }
 
 .my_table  {

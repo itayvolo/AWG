@@ -26,7 +26,7 @@
 }
 
 .right_a  {
-  padding: 5% 1% 5% 1%;
+  padding: 5% 0% 5% 0%;
   width: 100%;
   text-align: center;
 }
@@ -159,7 +159,7 @@ h2 small {
 /* form starting stylings ------------------------------- */
 .group 			  { 
   position:relative;
-  left: 35%;
+  left: 34%;
   transition: .48s;
   display: inline-block;
 }

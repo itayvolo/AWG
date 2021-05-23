@@ -35,7 +35,7 @@
     <button class="btn ripple-surface" style="font-size:40px;cursor:pointer;border: none;padding: 8px 16px;background-color: #607d8b;z-index: 0;top: 16%;" onclick="left_open()">☰</button>
 </header>
 <div id="main" style="width:85%; transition:0.5s;">
-  <h1 id="main-title" class="text-center align-middle" style="position: relative;top: 15px;left: 45%;display: inline-block;transition: left .5s;">Masham History</h1>
+  <h1 id="main-title" class="text-center align-middle" style="position: relative;top: 15px;left: 49%;display: inline-block;transition: left .5s;">Masham History</h1>
 </div>
 <br>
 <!-- Left Side Navigation -->
@@ -68,36 +68,22 @@
   <a class="btn ripple-surface" style="text-align: left;" href="#">About</a>
 </div>
 
-<button id="refresh" class="btn ripple-surface refresh_button">pugs</button>
+<button id="refresh" class="btn ripple-surface refresh_button" onclick="window.location.reload()">Reload </button>
 <button id="clear" class="btn ripple-surface clear_button">cleany_pugs</button>
 <br>
 <br>
 <!--Table-->
 <table class="my_table">
-  <tr class="my_th">
-    <th>Masham Name</th>
-    <th>Servers</th> 
-    <th>Tasks</th>
-    <th>Full View</th>
-  </tr>
-  <tr class="my_tr">
-    <td class="my_td">Jill</td>
-    <td class="my_td">Smith</td>
-    <td class="my_td">50</td>
-    <td class="my_td"><button type="button" class="plus_fullview btn ripple-surface btn-circle btn-lg">&plus;</button></td>
-  </tr>
-  <tr class="my_tr">
-    <td class="my_td">Eve</td>
-    <td class="my_td">Jackson</td>
-    <td class="my_td">94</td>
-    <td class="my_td"><button type="button" class="plus_fullview btn ripple-surface btn-circle btn-lg">&plus;</button></td>
-  </tr>
-  <tr class="my_tr">
-    <td class="my_td">John</td>
-    <td class="my_td">Doe</td>
-    <td class="my_td">80</td>
-    <td class="my_td"><button type="button" class="plus_fullview btn ripple-surface btn-circle btn-lg">&plus;</button></td>
-  </tr>
+  <tbody>
+    <tr class="my_th">
+      <th>Masham Name</th>
+      <th>Servers</th> 
+      <th>Tasks</th>
+      <th>Timestamp</th>
+      <th>Full View</th>
+    </tr>
+  <?php include './assets/includes/get-functions/get_masham_history.php';?>
+  </tbody>
 </table>
 
 

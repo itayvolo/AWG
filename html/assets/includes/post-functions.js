@@ -19,11 +19,11 @@ function Save_Current_SBS()  {
 
       for(taskN = 1; taskN <= sbs_count; taskN++)  {
         var current_task = $('#task_' + taskN);
-        servers = current_task.children('p')[0].innerText.replaceAll(' ',',');
+        servers = current_task.children('p')[0].innerText.replaceAll(' ',', ');
         main_variable = current_task.children('h5')[1].innerText;
   
         if (main_variable.includes('Services') == true) {
-          main_values = current_task.children('p')[1].innerText.replaceAll(' ',',');
+          main_values = current_task.children('p')[1].innerText.replaceAll(' ',', ');
         }
         else {
           main_values = current_task.children('p')[1].innerText;
