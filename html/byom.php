@@ -89,7 +89,7 @@
     <button id="dropdown1" class="btn ripple-surface dropdown-btn active"><nobr>Self&nbsp;-&nbsp;Build<i id="caret1" class="fa fa-caret-up" style="right:-20%;"></i></nobr></button>
     <div id="dd-container1" class="dropdown-container" style="display: block;">
       <div class="right_a">
-        <nobr><button type="button" id="plus_sb1" class="plusim btn ripple-surface btn-circle btn-lg" onclick="open_modal('Services','Service Check','Save_SB1');">&plus;</button><span id="Service" class="script_title">Service Check</span><a id="info1" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
+        <nobr><button type="button" id="plus_sb1" class="plusim btn ripple-surface btn-circle btn-lg" onclick="open_modal('Services','Service Check');">&plus;</button><span id="Service" class="script_title">Service Check</span><a id="info1" class="infos btn ripple-surface btn-circle btn-lg">&#9432;</a></nobr>
       </div>
       <hr>
       <div class="right_a">
@@ -135,12 +135,16 @@
 <!--Script-Box-->
 <div id="scriptbox" class="script-box">
   <!--<div id="scriptgraybox" class="script-gray-box"></div>-->
-  <h3 class="box_title">Script-Box</h3>
+  <h3 class="box_title" style="vertical-align:middle;padding:1% 0% 0% 0%">Script-Box</h3>
+  <hr>
 </div>
 <!--Log-Box-->
 <div id="logbox" class="log-box">
   <!--<div id="loggraybox" class="log-gray-box"></div>-->
-  <h3 class="box_title">log-Box</h3>
+  <h3 class="box_title" style="vertical-align:middle;padding:1% 0% 0% 0%">log-Box</h3>
+  <hr>
+  <div id="php-python-log"></div>
+  <br>
 </div>
 
 <!--Box-Modal-->
@@ -171,17 +175,6 @@
           </div>
         </form>
       </div>
-        <!--<form>-->
-        <!--  <div class="form-outline mb-4">-->
-        <!--    <input type="email" id="server_v" class="form-control" />-->
-        <!--    <label id="first-label" class="form-label">Servers</label>-->
-        <!--  </div>-->
-        <!--  <div class="form-outline mb-4">-->
-        <!--    <input type="text" id="main_v" class="form-control" />-->
-        <!--    <label id="second-label" class="form-label">Script Main Variable</label>-->
-        <!--  </div>-->
-        <!--</form>-->
-      <!--</div>-->
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" onclick="close_modal()" style="background-color:#818181;">Dismiss</button>
         <button id="run" type="button" class="btn btn-primary" style="background-color: #607D99;" onclick="add_sb(),close_modal()">Add Script</button><!--onclick="Save_SB1()"-->
@@ -192,7 +185,7 @@
 
 <br>
 <br>
-<button id="runbutton" class="run_button btn ripple-surface" onclick="Save_Current_SBS()">Save & Run</button><!--onclick="Save_Current_SBS()"-->
+<button id="runbutton" class="run_button btn ripple-surface" onclick="Save_Run_Masham()">Save & Run</button><!--onclick="Save_Current_SBS()"-->
 <br>
 
 <!-- Footer -->
@@ -234,7 +227,7 @@ function close_modal()
 
 //Add Self Build Script
 function add_sb() {
-  var task_nums = []
+  //var task_nums = []
   var variable1 = $('#first-label').text();
   var variable2 = $('#second-label').text();
 

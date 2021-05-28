@@ -14,23 +14,18 @@ elseif(strpos($mvariable, 'File') !== false)    {
     $table = 'FileTasks';
     $columnVar = FilePath;
 }
-elseif(strpos($mvariable, 'Timeout') !== false)    {
-    if (is_numeric($mvalue) !== false)  {
-        $table = 'RebootTasks';
-        $columnVar = Timeout;
-    }
-    else {
-        exit("Reboot Timeout variable must be a number..");
-    }
+elseif(strpos($mvariable, 'Timeout') !== false)    {   
+    $table = 'RebootTasks';
+    $columnVar = Timeout;
 }
-else{
+else    {
     //echo $mvariable;
     echo "Cant define 'table' Variable";
 }
 
 ////db_conn
 //if(strlen($servers) == 0 || strlen($mvalue) == 0 || strlen($mashamName) == 0)   {
-//    echo "Error, Cant continue with empty inputs..";
+//    echo "Error, Cant continue with empty inputs..(backend-side)";
 //}
 //else    {
 //    //echo "trying to insert";
