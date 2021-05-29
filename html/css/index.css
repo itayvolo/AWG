@@ -1,0 +1,40 @@
+.index_modal_ready_button {
+    border-radius:11px;
+    right:0.3%;
+    top:1%;
+    transition:0.4s;
+    box-shadow:0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 10%);
+    width:15%;
+    height:50px;
+    background-color:#607d8b;
+    color: black;
+    font-size: 115%;
+    font-weight: bolder;
+    vertical-align: 25%;
+}
+
+.index_modal_ready_button:hover   {
+    background-color: #333333!important;
+    color: #91bed4!important;
+    transition: 0.4s;
+}
+.index_modal_coward_button {
+    border-radius:11px;
+    right:0.3%;
+    top:1%;
+    transition:0.4s;
+    box-shadow:0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 10%);
+    width:15%;
+    height:50px;
+    background-color: pink;
+    color: black;
+    font-size: 115%;
+    font-weight: bolder;
+    vertical-align: 25%;
+}
+
+.index_modal_coward_button:hover   {
+    background-color: #333333!important;
+    color: pink!important;
+    transition: 0.4s;
+}

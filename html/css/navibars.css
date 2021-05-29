@@ -13,6 +13,7 @@ body {
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
+  box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 10%);
 }
 
 .sidenav .topsidenav {
@@ -43,6 +44,7 @@ body {
   top: 6%;
   right: 0%;
   font-size: 36px;
+  text-decoration: none!important;
 } 
 
 .sidenav hr {
@@ -90,6 +92,7 @@ body {
   overflow-x: hidden;
   padding-top: 6%;
   transition: 0.5s;
+  box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 10%);
 }
 
 .rightsidenav a button{

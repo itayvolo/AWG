@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="css/bootstrap-4.0/bootstrap.css">
   <link rel="stylesheet" href="css/mdb.min.css">
   <link rel="stylesheet" href="css/toastr.min.css">
+  <link rel="stylesheet" href="css/loading.css">
   <!-- Google Fonts Roboto -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"/>
   <!--<script defer src="js/all.js"></script>-->
@@ -32,10 +33,10 @@
   </video>
 <!-- Header -->
 <header class="container-xxl w3-theme-blue-grey" id="myHeader" style="position: absolute;height: 12%!important;">
-    <button class="btn ripple-surface" style="font-size:40px;cursor:pointer;border: none;padding: 8px 16px;background-color: #607d8b;z-index: 0;top: 16%;" onclick="left_open()">☰</button>
+    <button class="btn ripple-surface" style="border-radius:10px;font-size:40px;cursor:pointer;border: none;padding: 8px 16px;background-color: #607d8b;z-index: 0;top: 16%;" onclick="left_open()">☰</button>
 </header>
 <div id="main" style="width:85%; transition:0.5s;">
-  <button id="arrow" class="btn ripple-surface" onclick="right_close();"><i class="fas fa-angle-double-right"></i></button>
+  <button style="border-radius:10px;" id="arrow" class="btn ripple-surface" onclick="right_close();"><i class="fas fa-angle-double-right"></i></button>
   <h1 id="main-title" class="text-center align-middle" style="position: relative;top: 4%;left: 33.5%;display: inline-block;transition: left .5s;">Automatic War Games</h1>
 </div>
 <br>
@@ -177,7 +178,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" onclick="close_modal()" style="background-color:#818181;">Dismiss</button>
-        <button id="run" type="button" class="btn btn-primary" style="background-color: #607D99;" onclick="add_sb(),close_modal()">Add Script</button><!--onclick="Save_SB1()"-->
+        <button id="run" type="button" class="btn btn-primary" style="background-color: #607D99;" onclick="add_sb(),close_modal(),reset_modal()">Add Script</button><!--onclick="Save_SB1()"-->
       </div>
     </div>
   </div>
@@ -185,7 +186,11 @@
 
 <br>
 <br>
-<button id="runbutton" class="run_button btn ripple-surface" onclick="Save_Run_Masham()">Save & Run</button><!--onclick="Save_Current_SBS()"-->
+<button id="runbutton" class="run_button btn ripple-surface" onclick="Save_Run_Masham()"><div style="left:0%;display:inline-block;position:relative;width:70%;vertical-align:65%;">Save & Run</div>
+<div id="loading" class="loadingio-spinner-gear-fsfqfnlp58u"><div class="ldio-8v7o0z2h3mi">
+<div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+</div></div>
+</button><!--onclick="Save_Current_SBS()"-->
 <br>
 
 <!-- Footer -->
@@ -206,24 +211,29 @@
 <!-- Footer -->
 
 <script>
-function open_modal(main_variable,Name)
-  {  
-    //var get_Name = $("#" + Main_Variable).html();
-    //var Name = $("#" + Main_Variable).text;
-    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-    var modal = $('#exampleModal');
-    modal.find('.modal-title').text(Name);
-    modal.find('.modal-body #second-label').text(main_variable);
-    //modal.find('.modal-footer #run').onclick=function(){Save_SB1()};
-    modal.modal('show');
-  }
+function open_modal(main_variable,Name) {  
+  //var get_Name = $("#" + Main_Variable).html();
+  //var Name = $("#" + Main_Variable).text;
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $('#exampleModal');
+  modal.find('.modal-title').text(Name);
+  modal.find('.modal-body #second-label').text(main_variable);
+  //modal.find('.modal-footer #run').onclick=function(){Save_SB1()};
+  modal.modal('show');
+}
 
-function close_modal()
-  {
-    var modal = $('#exampleModal');
-    modal.modal('hide');
-  }
+function close_modal()  {
+  var modal = $('#exampleModal');
+  modal.modal('hide');
+}
+
+function reset_modal()  {
+  var input1 = $('#server_v')[0];
+  var input2 = $('#main_v')[0];
+  input1.value='';
+  input2.value='';
+}
 
 //Add Self Build Script
 function add_sb() {
@@ -361,7 +371,7 @@ function remove_sb(aa)  {
   
 function left_open() {
   event.stopPropagation();
-  document.getElementById("LeftSidebar").style.width = "23%";
+  document.getElementById("LeftSidebar").style.width = "20%";
   //x.style.width = "35%";
   //x.style.fontSize = "40px";
   //x.style.paddingTop = "10%";
