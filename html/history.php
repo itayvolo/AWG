@@ -107,7 +107,7 @@
 <script>
     function left_open() {
       event.stopPropagation();
-      document.getElementById("LeftSidebar").style.width = "23%";
+      document.getElementById("LeftSidebar").style.width = "17%";
       //x.style.width = "35%";
       //x.style.fontSize = "40px";
       //x.style.paddingTop = "10%";
